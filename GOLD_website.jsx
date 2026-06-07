@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 const NAV_LINKS = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
-  { id: "programs", label: "Programs" },
-  { id: "circles", label: "The Circles", highlight: true },
+  { id: "ecosystem", label: "Our Ecosystem" },
   { id: "fli", label: "FLI" },
+  { id: "circles", label: "The Circles", highlight: true },
   { id: "podcast", label: "RE-BUILD" },
   { id: "impact", label: "Impact" },
   { id: "join", label: "Join GOLD" },
@@ -58,10 +58,13 @@ const I = {
   Target: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>,
   Mail: () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>,
   MapPin: () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>,
+  Phone: () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.18 6.18l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>,
   Twitter: () => <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>,
   LinkedIn: () => <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>,
   Facebook: () => <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>,
   Youtube: () => <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>,
+  Instagram: () => <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>,
+  Spotify: () => <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>,
   Broadcast: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="2"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M7.76 7.76a6 6 0 0 0 0 8.49"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49"/></svg>,
 };
 
@@ -69,43 +72,132 @@ const LOGO = "/mnt/user-data/uploads/GOLD_LOGO2.png";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const STATS = [
-  { n: "500+", l: "Leaders Trained" }, { n: "20+", l: "Events Organized" },
-  { n: "12+", l: "Communities Reached" }, { n: "5+", l: "Years of Impact" },
+  { n: "200+", l: "Leaders Developed" }, { n: "4+", l: "Events Organized" },
+  { n: "5+", l: "Communities Reached" }, { n: "3+", l: "Years of Impact" },
 ];
+
+// ─── GOLD Ecosystem (5 Pillars) ───────────────────────────────────────────────
+const ECOSYSTEM = [
+  {
+    Icon: I.Star, id: "fli", color: "#22613C", pale: "#EAF3EC",
+    label: "Leadership Development",
+    title: "Future Leaders Initiative",
+    desc: "GOLD's flagship leadership program preparing young Africans for influence in government, business, ministry, and society through rigorous learning, mentorship, and practical projects.",
+    tag: "FLI",
+  },
+  {
+    Icon: I.Zap, id: "golden-circle", color: "#B8860B", pale: "#FDF6DC",
+    label: "Builders Community",
+    title: "GOLD-EN Circle",
+    desc: "A curated, closed-door entrepreneurship mentorship community for founders, builders, creators, and operators actively working on meaningful projects with real-world impact.",
+    tag: "GOLD-EN",
+  },
+  {
+    Icon: I.Shield, id: "policy-circle", color: "#1A3A5C", pale: "#EAF0F8",
+    label: "Governance & Policy Community",
+    title: "Policy Circle",
+    desc: "A strategic community for individuals committed to governance, public policy, politics, civic engagement, and national development in Africa.",
+    tag: "Policy",
+  },
+  {
+    Icon: I.Mic, id: "podcast", color: "#7A3A1A", pale: "#FDF0E8",
+    label: "Media & Thought Leadership",
+    title: "RE-BUILD Podcast",
+    desc: "Conversations on leadership, governance, entrepreneurship, mentorship, faith, and nation building designed to inspire a generation of African leaders.",
+    tag: "RE-BUILD",
+  },
+  {
+    Icon: I.Home, id: "impact", color: "#2A5A3C", pale: "#E8F5EE",
+    label: "Nation-Building Projects",
+    title: "Community Impact",
+    desc: "Hands-on initiatives that empower GOLD community members to apply leadership skills in solving real community challenges across Nigeria and Africa.",
+    tag: "Impact",
+  },
+];
+
+// ─── Programs (kept for backward compat) ─────────────────────────────────────
 const PROGRAMS = [
-  { Icon: I.Star, title: "Future Leaders Initiative", desc: "A structured curriculum covering leadership, governance, critical thinking, entrepreneurship, African history, ethics, and civic responsibility.", link: "fli" },
-  { Icon: I.Users, title: "Mentorship Programs", desc: "Connecting emerging leaders with experienced mentors across business, government, education, and community development.", link: "join" },
+  { Icon: I.Star, title: "Future Leaders Initiative", desc: "GOLD's flagship leadership development program designed to prepare young Africans for influence in government, business, ministry, and society.", link: "fli" },
+  { Icon: I.Users, title: "Mentorship Programs", desc: "Connecting emerging leaders with experienced mentors across business, government, education, and community development sectors.", link: "join" },
   { Icon: I.Globe, title: "Leadership Conferences", desc: "High-impact gatherings bringing together thought leaders, policymakers, and young changemakers to exchange ideas and strategies.", link: "join" },
-  { Icon: I.Home, title: "Community Impact Projects", desc: "Hands-on initiatives that empower participants to apply leadership skills in solving real community challenges.", link: "join" },
+  { Icon: I.Home, title: "Community Impact Projects", desc: "Hands-on initiatives empowering participants to apply leadership skills in solving real community challenges across Africa.", link: "impact" },
   { Icon: I.BookOpen, title: "Capacity Building", desc: "Workshops and seminars designed to strengthen the professional and personal competencies of young leaders.", link: "join" },
-  { Icon: I.Mic, title: "RE-BUILD Podcast", desc: "Conversations on business, governance, entrepreneurship, mentorship, and African development for the next generation.", link: "podcast" },
+  { Icon: I.Mic, title: "RE-BUILD Podcast", desc: "Conversations on leadership, governance, entrepreneurship, mentorship, faith, and nation building for African leaders.", link: "podcast" },
 ];
+
+// ─── Updated data ─────────────────────────────────────────────────────────────
+const VISION = "To raise and empower a generation of competent, ethical, and visionary Africans who will provide transformational leadership for nation building across Africa.";
+const MISSION = "GOLD exists to identify, develop, connect, and deploy transformational leaders who will influence government, business, education, ministry, and civil society for sustainable nation building in Africa.";
+
+const CORE_VALUES_V3 = [
+  { Icon: I.Shield, name: "Integrity", desc: "We hold ourselves and our community to the highest standard of honesty, transparency, and ethical conduct in every sphere." },
+  { Icon: I.Award, name: "Excellence", desc: "We pursue the highest standards in leadership development, character formation, and everything we produce." },
+  { Icon: I.Heart, name: "Service", desc: "We are called not to be served, but to serve Africa and humanity with humility, sacrifice, and dedication." },
+  { Icon: I.Star, name: "Leadership", desc: "We believe leadership is not a title — it is a responsibility. We develop leaders who lead by example in every room they enter." },
+  { Icon: I.Check, name: "Accountability", desc: "We take full responsibility for our commitments, our actions, and our outcomes to the communities and leaders we serve." },
+  { Icon: I.Globe, name: "Nation Building", desc: "Every program, conversation, and initiative at GOLD is guided by a deep and uncompromising commitment to building strong African nations." },
+];
+
+const FLI_MODULES_V3 = [
+  "Leadership Foundations", "African History & Civilization", "Governance & Public Policy",
+  "Critical Thinking", "Entrepreneurship", "Ethics & Character",
+  "Nation Building", "Communication & Public Speaking", "Civic Responsibility",
+];
+
+// ─── Social Links ─────────────────────────────────────────────────────────────
+const SOCIALS = {
+  linkedin: "https://www.linkedin.com/company/gold-builders/",
+  youtube: "https://www.youtube.com/@GOLDNationBuilders/videos",
+  instagram: "https://www.instagram.com/gold_builders/",
+  spotify: "https://open.spotify.com/show/3T3J0Vhb4QLVRFMOBIfcTD",
+};
+
+// ─── Formspree form IDs (replace with real IDs after setting up on formspree.io) ─
+const FORMS = {
+  fellowship: "https://formspree.io/f/fellowship",
+  volunteer:  "https://formspree.io/f/volunteer",
+  mentor:     "https://formspree.io/f/mentor",
+  partner:    "https://formspree.io/f/partner",
+  donate:     "https://formspree.io/f/donate",
+  ambassador: "https://formspree.io/f/ambassador",
+};
 const TESTIMONIALS = [
-  { text: "GOLD transformed how I see leadership and Africa's future. The FLI curriculum gave me practical tools and a burning sense of purpose for nation-building.", name: "Chidera Nwosu", role: "FLI Fellow, University of Nigeria", init: "CN" },
-  { text: "The mentorship I received through GOLD connected me to a network of extraordinary leaders. I entered as a student and left as a changemaker.", name: "Amara Osei", role: "Young Entrepreneur, Accra", init: "AO" },
-  { text: "RE-BUILD Podcast opened my eyes to governance and what ethical leadership truly means. GOLD is doing essential work for our continent.", name: "Fatima Al-Hassan", role: "Law Student, ABU Zaria", init: "FA" },
+  {
+    text: "I've never been someone deeply interested in politics — I only had vague knowledge here and there. Listening to the RE-BUILD Podcast has completely changed that, pushing me to look far beyond surface-level conversations. What I love most is the focus on growth. It isn't just about complaining about the system, but about actively equipping listeners with the mindset and tools to build capacity and lead effectively. Highly recommended for anyone wanting to grow in their personal and professional life.",
+    name: "Oluwatosin Lemboye",
+    role: "RE-BUILD Podcast Listener",
+    init: "OL",
+    tag: "RE-BUILD Podcast",
+  },
+  {
+    text: "I was just an ordinary FUTA student with my focus on just my life. I didn't even know how to properly balance all the various aspects of my life. Then I came across a link talking about a leadership class. I clicked it and joined FLI. Attending the first class was the moment everything changed. I was basically given LIGHT that day. I had to go back and revisit my vision board and started to think creatively and strategically about the next 5–10 years of my life. A regular FUTA boy turned a purposeful man, passionate about solving the education problem of Nigeria and the world at large. Thank you, FLI.",
+    name: "Samod Adeyanju",
+    role: "Founder, NexGen Academy · FLI Fellow",
+    init: "SA",
+    tag: "Future Leaders Initiative",
+  },
+  {
+    text: "Filling the mentorship form was one of the best decisions I made in 2025. It has been an impactful journey — being in a community so intentional about growth. It has been a leadership journey knowing true leadership not only by what was taught in class, but by the sacrificial personal lifestyles of our mentors. Through this journey, I have been able to relate more understandably with people, found interest in national news, started thinking nationally and globally, and been able to navigate my political leadership journey as a student leader who cannot be coerced through pressure. FLI is a favourite chapter of my life — about 6 months spent wisely in a great community of grace and intellect.",
+    name: "Ibukun Dorcas Iyanuoluwa",
+    role: "Student Leader & Community Advocate · FLI Fellow",
+    init: "ID",
+    tag: "Future Leaders Initiative",
+  },
 ];
-const FLI_MODULES = ["Leadership Foundations","African History & Civilization","Governance & Public Policy","Critical Thinking","Entrepreneurship","Nation Building","Public Speaking","Ethics & Integrity","Civic Responsibility"];
-const CORE_VALUES = [
-  { Icon: I.Shield, name: "Integrity", desc: "We uphold honesty, transparency, and ethical conduct in all we do." },
-  { Icon: I.Heart, name: "Service", desc: "We are called to serve Africa and humanity with humility and dedication." },
-  { Icon: I.Award, name: "Excellence", desc: "We pursue the highest standards in leadership development and character." },
-  { Icon: I.Lightbulb, name: "Innovation", desc: "We embrace new ideas and creative approaches to Africa's development challenges." },
-  { Icon: I.Check, name: "Accountability", desc: "We take responsibility for our actions and commitments to those we serve." },
-  { Icon: I.Globe, name: "Nation Building", desc: "Every action is guided by a deep commitment to building strong African nations." },
-];
+const FLI_MODULES = FLI_MODULES_V3;
+const CORE_VALUES = CORE_VALUES_V3;
 const PODCAST_EPS = [
   { ep:"EP 14", title:"Rebuilding Nigeria's Public Sector: A Leadership Blueprint", dur:"52 min", date:"May 2025" },
   { ep:"EP 13", title:"Entrepreneurship as a Tool for African Liberation", dur:"45 min", date:"Apr 2025" },
   { ep:"EP 12", title:"The Mentor I Needed: Stories of Transformational Guidance", dur:"38 min", date:"Mar 2025" },
 ];
 const JOIN_OPTS = [
-  { Icon: I.GradCap, title:"Become a Fellow", desc:"Apply to the Future Leaders Initiative and begin your transformational leadership journey.", action:"Apply Now" },
-  { Icon: I.Heart, title:"Volunteer", desc:"Offer your time, skills, and energy to support GOLD's programs and community outreach.", action:"Volunteer" },
-  { Icon: I.Users, title:"Become a Mentor", desc:"Share your expertise to guide the next generation of transformational leaders.", action:"Mentor" },
-  { Icon: I.Handshake, title:"Partner With Us", desc:"Align your organization with GOLD's mission through conferences, sponsorship, and programs.", action:"Partner" },
-  { Icon: I.TrendUp, title:"Donate", desc:"Your support directly funds leadership training, scholarships, and community impact.", action:"Donate" },
-  { Icon: I.Broadcast, title:"Spread the Word", desc:"Become an ambassador. Share GOLD's mission within your networks across Africa.", action:"Ambassador" },
+  { Icon: I.GradCap, title:"Become a Fellow", desc:"Apply to the Future Leaders Initiative and begin your transformational leadership journey. FLI is GOLD's flagship leadership development program.", action:"Apply Now", form: FORMS.fellowship },
+  { Icon: I.Heart, title:"Volunteer", desc:"Offer your time, skills, and energy to support GOLD's programs, events, and community outreach across Nigeria and Africa.", action:"Volunteer", form: FORMS.volunteer },
+  { Icon: I.Users, title:"Become a Mentor", desc:"Share your expertise, experience, and network to guide the next generation of transformational leaders in their development journey.", action:"Become a Mentor", form: FORMS.mentor },
+  { Icon: I.Handshake, title:"Partner With GOLD", desc:"Align your organization with GOLD's mission. Partner for conferences, sponsorships, programs, and collaborative nation-building initiatives.", action:"Partner With Us", form: FORMS.partner },
+  { Icon: I.TrendUp, title:"Donate", desc:"Your financial support directly funds leadership training, scholarships, conferences, and community impact initiatives across Africa.", action:"Donate", form: FORMS.donate },
+  { Icon: I.Broadcast, title:"Become an Ambassador", desc:"Become a GOLD Ambassador. Champion the mission within your networks and help us reach more young Africans who are ready to lead.", action:"Become an Ambassador", form: FORMS.ambassador },
 ];
 
 // ─── Styles ───────────────────────────────────────────────────────────────────
@@ -523,122 +615,242 @@ function Nav({ pg, set }) {
 
 // ─── Footer ───────────────────────────────────────────────────────────────────
 function Foot({ set }) {
+  const socials = [
+    { Icon: I.LinkedIn,  href: SOCIALS.linkedin,  label: "LinkedIn" },
+    { Icon: I.Youtube,   href: SOCIALS.youtube,   label: "YouTube" },
+    { Icon: I.Instagram, href: SOCIALS.instagram, label: "Instagram" },
+    { Icon: I.Spotify,   href: SOCIALS.spotify,   label: "Spotify" },
+  ];
   return (
     <footer className="ft">
       <div className="ft-in">
         <div className="ftg">
           <div className="ftb">
-            <div className="ftlogo"><Logo h={36} inv /><div><div className="ftlt">GOLD</div><div className="ftls">Leadership Development</div></div></div>
-            <p>Raising a generation of transformational leaders to build the Africa we all deserve — through character, competence, and commitment to service.</p>
-            <div className="sbtn">{[I.Twitter, I.LinkedIn, I.Facebook, I.Youtube].map((Icon, i) => <div className="sbtn2" key={i}><Icon /></div>)}</div>
+            <div className="ftlogo"><Logo h={36} inv /><div><div className="ftlt">GOLD</div><div className="ftls">Governmental & Organizational Leadership Development</div></div></div>
+            <p>Identifying, developing, connecting, and deploying transformational leaders who will influence government, business, education, ministry, and civil society for sustainable nation building in Africa.</p>
+            <div style={{ fontSize: ".72rem", color: "rgba(255,255,255,.35)", marginTop: ".75rem", display: "flex", alignItems: "center", gap: ".5rem" }}>
+              <I.MapPin />
+              <span>Akure, Ondo State, Nigeria</span>
+            </div>
+            <div className="sbtn" style={{ marginTop: "1.25rem" }}>
+              {socials.map(s => (
+                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="sbtn2" title={s.label} style={{ textDecoration: "none" }}>
+                  <s.Icon />
+                </a>
+              ))}
+            </div>
           </div>
           <div>
-            <div className="ftct">Programs</div>
-            <ul className="ftlinks">{[["Future Leaders Initiative","fli"],["The Circles","circles"],["GOLD-EN Circle","golden-circle"],["Policy Circle","policy-circle"],["RE-BUILD Podcast","podcast"]].map(([l, p]) => <li key={l}><a onClick={() => set(p)}>{l}</a></li>)}</ul>
+            <div className="ftct">The Ecosystem</div>
+            <ul className="ftlinks">
+              {[["Future Leaders Initiative","fli"],["GOLD-EN Circle","golden-circle"],["Policy Circle","policy-circle"],["RE-BUILD Podcast","podcast"],["Community Impact","impact"]].map(([l, p]) => <li key={l}><a onClick={() => set(p)}>{l}</a></li>)}
+            </ul>
           </div>
           <div>
             <div className="ftct">The Circles</div>
-            <ul className="ftlinks">{[["GOLD-EN Circle","golden-circle"],["Policy Circle","policy-circle"],["Apply — GOLD-EN","golden-apply"],["Apply — Policy","policy-apply"],["About Circles","circles"]].map(([l, p]) => <li key={l}><a onClick={() => set(p)}>{l}</a></li>)}</ul>
+            <ul className="ftlinks">
+              {[["About the Circles","circles"],["GOLD-EN Circle","golden-circle"],["Policy Circle","policy-circle"],["Apply — GOLD-EN","golden-apply"],["Apply — Policy Circle","policy-apply"]].map(([l, p]) => <li key={l}><a onClick={() => set(p)}>{l}</a></li>)}
+            </ul>
           </div>
           <div>
             <div className="ftct">Get Involved</div>
-            <ul className="ftlinks">{[["Become a Fellow","join"],["Partner With Us","join"],["Donate","join"],["Contact Us","contact"],["About GOLD","about"]].map(([l, p]) => <li key={l}><a onClick={() => set(p)}>{l}</a></li>)}</ul>
+            <ul className="ftlinks">
+              {[["Become a Fellow","join"],["Become a Mentor","join"],["Partner With GOLD","join"],["Donate","join"],["Contact Us","contact"],["About GOLD","about"]].map(([l, p]) => <li key={l}><a onClick={() => set(p)}>{l}</a></li>)}
+            </ul>
           </div>
         </div>
         <div className="ftbot">
-          <div>© 2025 <span>GOLD</span> — Governmental and Organizational Leadership Development.</div>
-          <div>Raising <span>Leaders</span>. Building <span>Nations</span>. Transforming <span>Africa</span>.</div>
+          <div>© 2025 <span>GOLD</span> — Governmental and Organizational Leadership Development. All rights reserved. · Akure, Nigeria.</div>
+          <div>Building <span>Africa</span> Through <span>Leadership</span>.</div>
         </div>
       </div>
     </footer>
   );
 }
 
-// ─── Application Form (shared, theme-aware) ───────────────────────────────────
+// ─── Application Form (full spec, theme-aware) ────────────────────────────────
 function AppForm({ circle, onBack }) {
   const ge = circle === "golden";
+  const EMAIL_TO = "goldnationbuilders@gmail.com";
+
+  // shared state
   const [step, setStep] = useState(1);
   const [done, setDone] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [chk, setChk] = useState(false);
-  const [f, setF] = useState({ fn: "", ln: "", em: "", ph: "", loc: "", role: "", spec: "", mot: "" });
+  const [committed, setCommitted] = useState(false);
+  const [goldenOpts, setGoldenOpts] = useState(false);
   const [ref] = useState(() => `${ge ? "GEN" : "POL"}-${Date.now().toString(36).toUpperCase().slice(-6)}`);
+
+  // GOLD-EN fields
+  const [ge_f, setGeF] = useState({
+    fullName:"", email:"", phone:"", gender:"", ageRange:"", city:"", occupation:"",
+    builderType:[], building:"", stage:"", duration:"", links:"",
+    problem:"", whyMatters:"", fiveYears:"", challenge:"",
+    whyJoin:"", contribution:"", heardAbout:"",
+    otherPrograms:[],
+  });
+
+  // Policy fields
+  const [pc_f, setPcF] = useState({
+    fullName:"", email:"", phone:"", gender:"", ageRange:"", city:"", occupation:"",
+    areasOfInterest:[], whyGov:"", nigeriaProblem:"", africaProblem:"",
+    prevExp:"", prevExpDetail:"", stayInformed:[], resources:"",
+    nationBuilding:"", roleNextDecade:"", whyJoin:"", contribution:"",
+    heardAbout:"", otherPrograms:[],
+  });
+
+  const f = ge ? ge_f : pc_f;
+  const setF = ge ? setGeF : setPcF;
   const u = (k, v) => setF(x => ({ ...x, [k]: v }));
+  const toggleArr = (k, val) => setF(x => ({
+    ...x, [k]: x[k].includes(val) ? x[k].filter(i => i !== val) : [...x[k], val]
+  }));
 
   const ac = ge ? C.ge : C.pcLight;
   const atxt = ge ? "#1A1200" : "#fff";
-  const ic = ge ? "afi-ge" : "afi-pc";
-  const fi = `afi ${ic}`;
-  const fs = `afsel afi ${ic}`;
-  const fta = `afta afi ${ic}`;
+  const hBg = ge ? "linear-gradient(135deg,#1A1200,#2A1E00)" : "linear-gradient(135deg,#060D18,#0D1E2E)";
+  const hBor = ge ? "rgba(218,165,32,.2)" : "rgba(122,176,224,.2)";
+  const hTxt = ge ? C.geLight : C.pcText;
 
-  const ok1 = f.fn && f.ln && f.em && f.ph;
-  const ok2 = f.loc && f.role && f.spec.trim().length > 10;
-  const ok3 = f.mot.split(/\s+/).filter(Boolean).length >= 30 && chk;
+  const fi = `afi ${ge ? "afi-ge" : "afi-pc"}`;
+  const fs = `afsel afi ${ge ? "afi-ge" : "afi-pc"}`;
+  const fta = `afta afi ${ge ? "afi-ge" : "afi-pc"}`;
+
+  // Step validation
+  const ok1 = f.fullName.trim().length > 2 && f.email.includes("@") && f.phone.length > 6 && f.gender && f.ageRange && f.city.trim() && f.occupation.trim();
+  const ok2ge = ge_f.building.trim().length > 20 && ge_f.stage && ge_f.duration;
+  const ok2pc = pc_f.areasOfInterest.length > 0 && pc_f.whyGov.trim().length > 20 && pc_f.nigeriaProblem.trim().length > 10 && pc_f.africaProblem.trim().length > 10;
+  const ok2 = ge ? ok2ge : ok2pc;
+  const ok3ge = ge_f.problem.trim().length > 20 && ge_f.whyMatters.trim().length > 20 && ge_f.fiveYears.trim().length > 10 && ge_f.challenge.trim().length > 10;
+  const ok3pc = pc_f.nationBuilding.trim().length > 20 && pc_f.roleNextDecade.trim().length > 20;
+  const ok3 = ge ? ok3ge : ok3pc;
+  const ok4 = f.whyJoin.trim().split(/\s+/).filter(Boolean).length >= 30 && f.contribution.trim().length > 15 && f.heardAbout && committed;
+
+  const TOTAL_STEPS = ge ? 4 : 4;
+  const STEP_LABELS = ge
+    ? ["Personal Info", "Builder Profile", "Vision", "Community Fit"]
+    : ["Personal Info", "Gov. Interest", "Knowledge", "Nation Building"];
 
   const submit = async () => {
-    if (!ok3) return;
+    if (!ok4) return;
     setLoading(true);
-    const rec = { ...f, circle: ge ? "GOLD-EN Circle" : "Policy Circle", ref, at: new Date().toISOString() };
-    try { const ex = JSON.parse(localStorage.getItem("gold_apps") || "[]"); ex.push(rec); localStorage.setItem("gold_apps", JSON.stringify(ex)); } catch (_) { }
-    await new Promise(r => setTimeout(r, 1600));
+    const payload = { circle: ge ? "GOLD-EN Circle" : "Policy Circle", ref, submittedAt: new Date().toISOString(), ...f };
+    try {
+      // Send to Formspree
+      await fetch(`https://formspree.io/f/${ge ? "xpzgkgvw" : "xpzgkgvw"}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ _replyto: f.email, _subject: `[GOLD] ${ge ? "GOLD-EN" : "Policy"} Circle Application — ${f.fullName} [${ref}]`, ...payload }),
+      });
+      // Also store locally
+      const ex = JSON.parse(localStorage.getItem("gold_apps") || "[]");
+      ex.push(payload);
+      localStorage.setItem("gold_apps", JSON.stringify(ex));
+    } catch (_) {}
     setLoading(false);
     setDone(true);
   };
 
   const BtnBack = ({ onClick }) => (
-    <button onClick={onClick} style={{ background: "transparent", border: "1.5px solid rgba(0,0,0,.1)", color: C.muted, borderRadius: 10, padding: ".82rem 1.5rem", fontWeight: 600, fontSize: ".86rem", cursor: "pointer", fontFamily: "'DM Sans',sans-serif" }}>← Back</button>
+    <button onClick={onClick} style={{ background:"transparent", border:"1.5px solid rgba(0,0,0,.1)", color:C.muted, borderRadius:10, padding:".82rem 1.5rem", fontWeight:600, fontSize:".86rem", cursor:"pointer", fontFamily:"'DM Sans',sans-serif" }}>← Back</button>
   );
-  const BtnNext = ({ onClick, disabled }) => (
-    <button onClick={onClick} disabled={disabled} style={{ background: disabled ? "rgba(0,0,0,.08)" : ac, color: disabled ? C.muted : atxt, border: "none", borderRadius: 10, padding: ".82rem 2rem", fontWeight: 700, fontSize: ".86rem", cursor: disabled ? "not-allowed" : "pointer", fontFamily: "'DM Sans',sans-serif", display: "inline-flex", alignItems: "center", gap: ".5rem", transition: "all .2s" }}>Continue <I.ArrowRight /></button>
+  const BtnNext = ({ onClick, disabled, label="Continue" }) => (
+    <button onClick={onClick} disabled={disabled} style={{ background:disabled?"rgba(0,0,0,.08)":ac, color:disabled?C.muted:atxt, border:"none", borderRadius:10, padding:".82rem 2rem", fontWeight:700, fontSize:".86rem", cursor:disabled?"not-allowed":"pointer", fontFamily:"'DM Sans',sans-serif", display:"inline-flex", alignItems:"center", gap:".5rem", transition:"all .2s", opacity:disabled?.6:1 }}>{label} {!disabled && <I.ArrowRight />}</button>
   );
 
+  const CheckGroup = ({ label, options, field, cols = 2 }) => (
+    <div className="afg">
+      <label className="aflbl">{label}</label>
+      <div style={{ display:"grid", gridTemplateColumns:`repeat(${cols},1fr)`, gap:".5rem", marginTop:".4rem" }}>
+        {options.map(opt => {
+          const checked = f[field].includes(opt);
+          return (
+            <div key={opt} onClick={() => toggleArr(field, opt)} style={{ display:"flex", alignItems:"center", gap:".6rem", padding:".62rem .85rem", borderRadius:8, border:`1.5px solid ${checked ? ac : "rgba(26,74,46,.12)"}`, background:checked ? `${ac}12` : "#F7F9F5", cursor:"pointer", transition:"all .2s" }}>
+              <div style={{ width:16, height:16, borderRadius:4, flexShrink:0, border:`2px solid ${checked ? ac : "rgba(26,74,46,.2)"}`, background:checked?ac:"transparent", display:"flex", alignItems:"center", justifyContent:"center", color:"#fff", fontSize:"10px" }}>{checked && "✓"}</div>
+              <span style={{ fontSize:".79rem", fontWeight:checked?600:400, color:checked?C.text:C.muted, lineHeight:1.3 }}>{opt}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+
+  const RadioGroup = ({ label, options, field }) => (
+    <div className="afg">
+      <label className="aflbl">{label}</label>
+      <div style={{ display:"flex", flexDirection:"column", gap:".4rem", marginTop:".4rem" }}>
+        {options.map(opt => {
+          const checked = f[field] === opt;
+          return (
+            <div key={opt} onClick={() => u(field, opt)} style={{ display:"flex", alignItems:"center", gap:".7rem", padding:".6rem .85rem", borderRadius:8, border:`1.5px solid ${checked?ac:"rgba(26,74,46,.1)"}`, background:checked?`${ac}10`:"#F7F9F5", cursor:"pointer", transition:"all .2s" }}>
+              <div style={{ width:16, height:16, borderRadius:"50%", flexShrink:0, border:`2px solid ${checked?ac:"rgba(26,74,46,.2)"}`, background:checked?ac:"transparent", display:"flex", alignItems:"center", justifyContent:"center" }}>{checked && <div style={{ width:6, height:6, borderRadius:"50%", background:"#fff" }} />}</div>
+              <span style={{ fontSize:".82rem", fontWeight:checked?600:400, color:checked?C.text:C.muted }}>{opt}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+
+  // ── CONFIRMATION ──────────────────────────────────────────────────────────────
   if (done) return (
     <div className="cs fi2">
       <div className={`cc si ${ge ? "cc-ge" : "cc-pc"}`}>
         <div className="cico2"><I.CheckCircle /></div>
         <div className="cref">Application Received · {ref}</div>
         <div className="ctitle2">You're In the Queue</div>
-        <div className="cbody">Thank you, <strong>{f.fn}</strong>. Your application to the <strong>{ge ? "GOLD-EN Circle" : "Policy Circle"}</strong> has been submitted with reference <strong>{ref}</strong>.</div>
+        <div className="cbody">
+          Thank you, <strong>{f.fullName.split(" ")[0]}</strong>. Your application to the <strong>{ge ? "GOLD-EN Circle" : "Policy Circle"}</strong> has been received with reference <strong>{ref}</strong>. A copy has been sent to <strong>{f.email}</strong>.
+        </div>
         <div className="cdiv" />
-        <div>{[["01","Application reviewed by the GOLD Selection Board (7–10 business days)"],["02","Shortlisted applicants contacted for a brief assessment conversation"],["03","Selected members receive formal admission and onboarding details"]].map(([n, t]) => (
-          <div className="cstep" key={n}><div className="cstepn">{n}</div><div className="cstept">{t}</div></div>
-        ))}</div>
+        <div>
+          {[
+            ["01","Application reviewed by the GOLD Selection Board (7–10 business days)"],
+            ["02","Shortlisted applicants contacted for a brief assessment conversation"],
+            ["03","Selected members receive formal admission and onboarding details"],
+          ].map(([n,t]) => <div className="cstep" key={n}><div className="cstepn">{n}</div><div className="cstept">{t}</div></div>)}
+        </div>
         <div className="cdiv" />
-        <div style={{ fontSize: ".77rem", textAlign: "center" }} className="cbody">Questions? Email <span style={{ color: ge ? C.geLight : C.pcAccent, fontWeight: 600 }}>circles@goldleadershipafrica.org</span></div>
-        <button onClick={onBack} style={{ marginTop: "1.75rem", background: "transparent", border: `1.5px solid ${ge ? "rgba(218,165,32,.3)" : "rgba(122,176,224,.3)"}`, color: ge ? C.geLight : C.pcText, padding: ".72rem 2rem", borderRadius: 10, cursor: "pointer", fontFamily: "'DM Sans',sans-serif", fontWeight: 600, fontSize: ".84rem" }}>← Back to Program</button>
+        <div style={{ fontSize:".77rem", textAlign:"center" }} className="cbody">
+          Questions? Email <span style={{ color:ge?C.geLight:C.pcAccent, fontWeight:600 }}>{EMAIL_TO}</span>
+        </div>
+        <button onClick={onBack} style={{ marginTop:"1.75rem", background:"transparent", border:`1.5px solid ${ge?"rgba(218,165,32,.3)":"rgba(122,176,224,.3)"}`, color:ge?C.geLight:C.pcText, padding:".72rem 2rem", borderRadius:10, cursor:"pointer", fontFamily:"'DM Sans',sans-serif", fontWeight:600, fontSize:".84rem" }}>
+          ← Back to Program
+        </button>
       </div>
     </div>
   );
 
-  const hBg = ge ? "linear-gradient(135deg,#1A1200,#2A1E00)" : "linear-gradient(135deg,#060D18,#0D1E2E)";
-  const hBor = ge ? "rgba(218,165,32,.2)" : "rgba(122,176,224,.2)";
-  const hTxt = ge ? C.geLight : C.pcText;
-  const steps = ["Personal Info", "Background", "Statement"];
-
+  // ── FORM SHELL ────────────────────────────────────────────────────────────────
   return (
     <div className="afw fu">
       {/* Header */}
-      <div style={{ background: hBg, borderBottom: `1px solid ${hBor}`, padding: "2.5rem 2.5rem 2rem" }}>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1.5rem" }}>
+      <div style={{ background:hBg, borderBottom:`1px solid ${hBor}`, padding:"2.5rem 2.5rem 2rem" }}>
+        <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:"1.5rem" }}>
           <div>
-            <div style={{ fontFamily: "'Cinzel',serif", fontSize: ".6rem", fontWeight: 600, letterSpacing: ".25em", textTransform: "uppercase", color: hTxt, marginBottom: ".5rem" }}>{ge ? "◆ GOLD-EN Circle Application" : "◈ Policy Circle Application"}</div>
-            <div style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.25rem", fontWeight: 700, color: hTxt }}>{ge ? "Apply to Join the GOLD-EN Circle" : "Apply for Policy Circle Admission"}</div>
+            <div style={{ fontFamily:"'Cinzel',serif", fontSize:".58rem", fontWeight:600, letterSpacing:".25em", textTransform:"uppercase", color:hTxt, marginBottom:".5rem" }}>
+              {ge ? "◆ GOLD-EN Circle Application" : "◈ Policy Circle Application"}
+            </div>
+            <div style={{ fontFamily:"'Playfair Display',serif", fontSize:"1.2rem", fontWeight:700, color:hTxt }}>
+              {ge ? "Apply to Join the GOLD-EN Circle" : "Apply for Policy Circle Admission"}
+            </div>
           </div>
-          <div style={{ fontSize: ".62rem", fontWeight: 700, letterSpacing: ".12em", textTransform: "uppercase", padding: ".28rem .75rem", borderRadius: 100, background: ge ? "rgba(218,165,32,.12)" : "rgba(122,176,224,.1)", color: hTxt, border: `1px solid ${hBor}` }}>Selective Intake</div>
+          <div style={{ fontSize:".6rem", fontWeight:700, letterSpacing:".12em", textTransform:"uppercase", padding:".28rem .75rem", borderRadius:100, background:ge?"rgba(218,165,32,.12)":"rgba(122,176,224,.1)", color:hTxt, border:`1px solid ${hBor}` }}>
+            Selective Intake
+          </div>
         </div>
-        {/* Steps progress */}
-        <div style={{ display: "flex", alignItems: "flex-start" }}>
-          {steps.map((s, i) => (
-            <div key={s} style={{ display: "flex", alignItems: "flex-start", flex: 1 }}>
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1 }}>
-                <div style={{ display: "flex", alignItems: "center", width: "100%" }}>
-                  <div style={{ width: 29, height: 29, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: ".68rem", fontWeight: 700, flexShrink: 0, background: i + 1 <= step ? ac : "rgba(255,255,255,.06)", color: i + 1 <= step ? atxt : "rgba(255,255,255,.3)", border: i + 1 > step ? "1px solid rgba(255,255,255,.12)" : "none", transition: "all .3s" }}>
-                    {i + 1 < step ? <I.Check /> : i + 1}
+        {/* Progress */}
+        <div style={{ display:"flex", alignItems:"flex-start" }}>
+          {STEP_LABELS.map((s,i) => (
+            <div key={s} style={{ display:"flex", alignItems:"flex-start", flex:1 }}>
+              <div style={{ display:"flex", flexDirection:"column", alignItems:"center", flex:1 }}>
+                <div style={{ display:"flex", alignItems:"center", width:"100%" }}>
+                  <div style={{ width:28, height:28, borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center", fontSize:".66rem", fontWeight:700, flexShrink:0, background:i+1<=step?ac:"rgba(255,255,255,.06)", color:i+1<=step?atxt:"rgba(255,255,255,.3)", border:i+1>step?"1px solid rgba(255,255,255,.12)":"none", transition:"all .3s" }}>
+                    {i+1 < step ? "✓" : i+1}
                   </div>
-                  {i < steps.length - 1 && <div style={{ flex: 1, height: 2, background: i + 1 < step ? ac : "rgba(255,255,255,.08)", transition: "all .3s" }} />}
+                  {i < STEP_LABELS.length-1 && <div style={{ flex:1, height:2, background:i+1<step?ac:"rgba(255,255,255,.08)", transition:"all .3s" }} />}
                 </div>
-                <div style={{ fontSize: ".58rem", fontWeight: 600, letterSpacing: ".06em", textTransform: "uppercase", marginTop: ".35rem", color: i + 1 === step ? hTxt : "rgba(255,255,255,.28)", textAlign: "center" }}>{s}</div>
+                <div style={{ fontSize:".54rem", fontWeight:600, letterSpacing:".05em", textTransform:"uppercase", marginTop:".3rem", color:i+1===step?hTxt:"rgba(255,255,255,.25)", textAlign:"center", lineHeight:1.3 }}>{s}</div>
               </div>
             </div>
           ))}
@@ -647,65 +859,263 @@ function AppForm({ circle, onBack }) {
 
       <div className="afb">
         {/* Trust badge */}
-        <div className={`tb ${ge ? "tb-ge" : "tb-pc"}`}>
-          <div style={{ color: ge ? C.geDark : C.pc, flexShrink: 0 }}><I.Lock /></div>
-          <div className="tb-t"><strong>{ge ? "Applications reviewed by GOLD Selection Board" : "Applications reviewed by GOLD Selection Committee"}</strong>All submissions are confidential. Selected members contacted within 7–10 business days.</div>
+        <div className={`tb ${ge?"tb-ge":"tb-pc"}`}>
+          <div style={{ color:ge?C.geDark:C.pc, flexShrink:0 }}><I.Lock /></div>
+          <div className="tb-t">
+            <strong>{ge?"Applications reviewed by GOLD Selection Board":"Applications reviewed by GOLD Selection Committee"}</strong>
+            All submissions are confidential. Selected members will be contacted within 7–10 business days.
+          </div>
         </div>
 
-        {/* STEP 1 */}
-        {step === 1 && <div className="fi2">
-          <div style={{ fontSize: ".76rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".12em", color: C.muted, marginBottom: "1.25rem" }}>Step 1 of 3 — Personal Information</div>
-          <div className="afrow">
-            <div className="afg"><label className="aflbl">First Name *</label><input className={fi} placeholder="Chidi" value={f.fn} onChange={e => u("fn", e.target.value)} /></div>
-            <div className="afg"><label className="aflbl">Last Name *</label><input className={fi} placeholder="Okonkwo" value={f.ln} onChange={e => u("ln", e.target.value)} /></div>
-          </div>
-          <div className="afg"><label className="aflbl">Email Address *</label><input className={fi} type="email" placeholder="you@example.com" value={f.em} onChange={e => u("em", e.target.value)} /></div>
-          <div className="afg"><label className="aflbl">Phone Number *</label><input className={fi} placeholder="+234 xxx xxxx xxxx" value={f.ph} onChange={e => u("ph", e.target.value)} /></div>
-          <div style={{ display: "flex", justifyContent: "flex-end", marginTop: ".5rem" }}><BtnNext onClick={() => ok1 && setStep(2)} disabled={!ok1} /></div>
-        </div>}
-
-        {/* STEP 2 */}
-        {step === 2 && <div className="fi2">
-          <div style={{ fontSize: ".76rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".12em", color: C.muted, marginBottom: "1.25rem" }}>Step 2 of 3 — Background & Context</div>
-          <div className="afg"><label className="aflbl">Location (City & Country) *</label><input className={fi} placeholder="Lagos, Nigeria" value={f.loc} onChange={e => u("loc", e.target.value)} /></div>
-          <div className="afg">
-            <label className="aflbl">Current Role *</label>
-            <select className={fs} value={f.role} onChange={e => u("role", e.target.value)}>
-              <option value="">Select your current role</option>
-              <option>Student (Secondary)</option><option>Student (University)</option>
-              <option>Entrepreneur / Founder</option><option>Young Professional</option>
-              <option>Civil Servant / Government Official</option><option>NGO / Social Sector</option><option>Other</option>
-            </select>
-          </div>
-          <div className="afg">
-            <label className="aflbl">{ge ? "What are you currently building or planning to build? *" : "What area of leadership or public service interests you? *"}</label>
-            <textarea className={fta} placeholder={ge ? "Describe your venture, project, or idea — its stage, the problem it solves, and what you're building toward..." : "Describe the sector, issue area, or institution you feel called to — e.g. public health policy, governance reform, constitutional law, civic education..."} value={f.spec} onChange={e => u("spec", e.target.value)} style={{ minHeight: 110 }} />
-          </div>
-          <div style={{ display: "flex", justifyContent: "space-between", marginTop: ".5rem" }}><BtnBack onClick={() => setStep(1)} /><BtnNext onClick={() => ok2 && setStep(3)} disabled={!ok2} /></div>
-        </div>}
-
-        {/* STEP 3 */}
-        {step === 3 && <div className="fi2">
-          <div style={{ fontSize: ".76rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".12em", color: C.muted, marginBottom: "1.25rem" }}>Step 3 of 3 — Personal Statement</div>
-          <div className="afg">
-            <label className="aflbl">Why do you want to join the {ge ? "GOLD-EN Circle" : "Policy Circle"}? *</label>
-            <div style={{ fontSize: ".73rem", color: C.muted, marginBottom: ".6rem", lineHeight: 1.6 }}>This is your most important field. Speak honestly about your motivation, what you hope to gain, and what you will contribute. Minimum 30 words.</div>
-            <textarea className={fta} placeholder={ge ? "Speak to your entrepreneurial journey, the challenges you face, what you hope to gain from mentorship and peer accountability, and why you're ready now..." : "Speak to your vision for leadership and public service, what draws you to policy or governance, and why this circle aligns with the leader you're becoming..."} value={f.mot} onChange={e => u("mot", e.target.value)} style={{ minHeight: 165 }} />
-            <div style={{ textAlign: "right", fontSize: ".7rem", color: f.mot.split(/\s+/).filter(Boolean).length >= 30 ? C.forestMid : C.muted, marginTop: ".35rem" }}>
-              {f.mot.split(/\s+/).filter(Boolean).length} words {f.mot.split(/\s+/).filter(Boolean).length >= 30 ? "✓" : "(min 30)"}
+        {/* ── STEP 1: Personal Information ── */}
+        {step === 1 && (
+          <div className="fi2">
+            <div style={{ fontSize:".74rem", fontWeight:700, textTransform:"uppercase", letterSpacing:".12em", color:C.muted, marginBottom:"1.25rem" }}>
+              Section 1 — Personal Information
+            </div>
+            <div className="afg"><label className="aflbl">Full Name *</label><input className={fi} placeholder="e.g. Chidi Emmanuel Okonkwo" value={f.fullName} onChange={e => u("fullName", e.target.value)} /></div>
+            <div className="afrow">
+              <div className="afg"><label className="aflbl">Email Address *</label><input className={fi} type="email" placeholder="you@example.com" value={f.email} onChange={e => u("email", e.target.value)} /></div>
+              <div className="afg"><label className="aflbl">Phone Number *</label><input className={fi} placeholder="+234 xxx xxxx xxxx" value={f.phone} onChange={e => u("phone", e.target.value)} /></div>
+            </div>
+            <div className="afrow">
+              <RadioGroup label="Gender *" options={["Male","Female"]} field="gender" />
+              <RadioGroup label="Age Range *" options={["Under 18","18–24","25–34","35–44","45+"]} field="ageRange" />
+            </div>
+            <div className="afrow">
+              <div className="afg"><label className="aflbl">Current City *</label><input className={fi} placeholder="Akure, Nigeria" value={f.city} onChange={e => u("city", e.target.value)} /></div>
+              <div className="afg"><label className="aflbl">Occupation / Profession *</label><input className={fi} placeholder="Student, Entrepreneur, Civil Servant…" value={f.occupation} onChange={e => u("occupation", e.target.value)} /></div>
+            </div>
+            <div style={{ display:"flex", justifyContent:"flex-end", marginTop:".5rem" }}>
+              <BtnNext onClick={() => ok1 && setStep(2)} disabled={!ok1} />
             </div>
           </div>
-          <div className="cbrow" onClick={() => setChk(c => !c)}>
-            <div className={`cbx${chk ? (ge ? " cbx-ge" : " cbx-pc") : ""}`}>{chk && <I.Check />}</div>
-            <div className="cblbl">I understand that <strong>admission to this Circle is selective</strong> and not guaranteed. I commit to full participation, confidentiality within Circle sessions, and upholding the values of the GOLD community if selected.</div>
+        )}
+
+        {/* ── STEP 2 GOLD-EN: Builder Profile ── */}
+        {step === 2 && ge && (
+          <div className="fi2">
+            <div style={{ fontSize:".74rem", fontWeight:700, textTransform:"uppercase", letterSpacing:".12em", color:C.muted, marginBottom:"1.25rem" }}>
+              Section 2 — Your Builder Profile
+            </div>
+            <CheckGroup
+              label="Which best describes you? *"
+              options={["Founder","Entrepreneur","Student Builder","Ministry Leader","Creative","Community Leader","Professional","Researcher","Social Innovator","Other"]}
+              field="builderType" cols={2}
+            />
+            <div className="afg">
+              <label className="aflbl">What are you currently building? *</label>
+              <div style={{ fontSize:".72rem", color:C.muted, marginBottom:".5rem", lineHeight:1.5 }}>Business · Startup · Ministry · NGO · Community Initiative · Research Project · Media Platform · Technology Product</div>
+              <textarea className={fta} placeholder="Describe what you're building — what it is, who it's for, the problem it solves, and where it stands today…" value={ge_f.building} onChange={e => u("building", e.target.value)} style={{ minHeight:120 }} />
+            </div>
+            <RadioGroup
+              label="What stage is your project currently in? *"
+              options={["Idea Stage","Validation Stage","Early Growth","Active Operations","Scaling Stage"]}
+              field="stage"
+            />
+            <RadioGroup
+              label="How long have you been working on it? *"
+              options={["Less than 6 months","6–12 months","1–2 years","2–5 years","More than 5 years"]}
+              field="duration"
+            />
+            <div className="afg">
+              <label className="aflbl">Share any relevant links <span style={{ fontWeight:400, color:C.muted }}>(Optional)</span></label>
+              <div style={{ fontSize:".72rem", color:C.muted, marginBottom:".5rem" }}>Website · LinkedIn · Instagram · Portfolio · Pitch Deck · YouTube Channel</div>
+              <textarea className={fta} placeholder="Paste links here, one per line…" value={ge_f.links} onChange={e => u("links", e.target.value)} style={{ minHeight:80 }} />
+            </div>
+            <div style={{ display:"flex", justifyContent:"space-between", marginTop:".5rem" }}>
+              <BtnBack onClick={() => setStep(1)} />
+              <BtnNext onClick={() => ok2 && setStep(3)} disabled={!ok2} />
+            </div>
           </div>
-          <div style={{ display: "flex", justifyContent: "space-between", marginTop: ".5rem" }}>
-            <BtnBack onClick={() => setStep(2)} />
-            <button onClick={submit} disabled={!ok3 || loading} className={ge ? "sub-ge" : "sub-pc"} style={{ width: "auto", padding: ".85rem 2rem" }}>
-              {loading ? "Submitting…" : <><I.Send /> Submit Application</>}
-            </button>
+        )}
+
+        {/* ── STEP 2 POLICY: Governance Interest Profile ── */}
+        {step === 2 && !ge && (
+          <div className="fi2">
+            <div style={{ fontSize:".74rem", fontWeight:700, textTransform:"uppercase", letterSpacing:".12em", color:C.muted, marginBottom:"1.25rem" }}>
+              Section 2 — Governance Interest Profile
+            </div>
+            <CheckGroup
+              label="Which area interests you most? *"
+              options={["Governance","Public Policy","Politics","Economic Development","Education Policy","Healthcare Policy","Youth Development","Civic Leadership","International Relations","African Development"]}
+              field="areasOfInterest" cols={2}
+            />
+            <div className="afg">
+              <label className="aflbl">Why are you interested in governance and policy? *</label>
+              <textarea className={fta} placeholder="Share what drew you to this space — your journey, a defining moment, or a conviction that compelled you…" value={pc_f.whyGov} onChange={e => u("whyGov", e.target.value)} style={{ minHeight:110 }} />
+            </div>
+            <div className="afg">
+              <label className="aflbl">What major challenge do you believe Nigeria needs to solve urgently? *</label>
+              <textarea className={fta} placeholder="Be specific. Go beyond the obvious." value={pc_f.nigeriaProblem} onChange={e => u("nigeriaProblem", e.target.value)} style={{ minHeight:90 }} />
+            </div>
+            <div className="afg">
+              <label className="aflbl">What major challenge do you believe Africa needs to solve urgently? *</label>
+              <textarea className={fta} placeholder="Think continentally. What structural, governance, or development challenge concerns you most?" value={pc_f.africaProblem} onChange={e => u("africaProblem", e.target.value)} style={{ minHeight:90 }} />
+            </div>
+            <div style={{ display:"flex", justifyContent:"space-between", marginTop:".5rem" }}>
+              <BtnBack onClick={() => setStep(1)} />
+              <BtnNext onClick={() => ok2 && setStep(3)} disabled={!ok2} />
+            </div>
           </div>
-        </div>}
+        )}
+
+        {/* ── STEP 3 GOLD-EN: Vision & Leadership ── */}
+        {step === 3 && ge && (
+          <div className="fi2">
+            <div style={{ fontSize:".74rem", fontWeight:700, textTransform:"uppercase", letterSpacing:".12em", color:C.muted, marginBottom:"1.25rem" }}>
+              Section 3 — Vision & Leadership
+            </div>
+            <div className="afg">
+              <label className="aflbl">What problem are you trying to solve? *</label>
+              <textarea className={fta} placeholder="Describe the core problem your work addresses. Be specific about the people it affects and why this problem matters." value={ge_f.problem} onChange={e => u("problem", e.target.value)} style={{ minHeight:100 }} />
+            </div>
+            <div className="afg">
+              <label className="aflbl">Why does this work matter to you personally? *</label>
+              <textarea className={fta} placeholder="What is your personal conviction behind this? Why you? Why now?" value={ge_f.whyMatters} onChange={e => u("whyMatters", e.target.value)} style={{ minHeight:100 }} />
+            </div>
+            <div className="afg">
+              <label className="aflbl">Where do you hope this initiative will be in 5 years? *</label>
+              <textarea className={fta} placeholder="Paint a picture of success. What does the future look like if this works?" value={ge_f.fiveYears} onChange={e => u("fiveYears", e.target.value)} style={{ minHeight:90 }} />
+            </div>
+            <div className="afg">
+              <label className="aflbl">What leadership or execution challenge are you currently facing? *</label>
+              <textarea className={fta} placeholder="Be honest. What is the biggest thing holding you or your work back right now?" value={ge_f.challenge} onChange={e => u("challenge", e.target.value)} style={{ minHeight:90 }} />
+            </div>
+            <div style={{ display:"flex", justifyContent:"space-between", marginTop:".5rem" }}>
+              <BtnBack onClick={() => setStep(2)} />
+              <BtnNext onClick={() => ok3 && setStep(4)} disabled={!ok3} />
+            </div>
+          </div>
+        )}
+
+        {/* ── STEP 3 POLICY: Knowledge & Engagement ── */}
+        {step === 3 && !ge && (
+          <div className="fi2">
+            <div style={{ fontSize:".74rem", fontWeight:700, textTransform:"uppercase", letterSpacing:".12em", color:C.muted, marginBottom:"1.25rem" }}>
+              Section 3 — Knowledge & Engagement
+            </div>
+            <RadioGroup
+              label="Have you previously participated in any governance, policy, leadership, or civic programs? *"
+              options={["Yes","No"]}
+              field="prevExp"
+            />
+            {pc_f.prevExp === "Yes" && (
+              <div className="afg">
+                <label className="aflbl">Please tell us about it.</label>
+                <textarea className={fta} placeholder="Which program? When? What did you gain from the experience?" value={pc_f.prevExpDetail} onChange={e => u("prevExpDetail", e.target.value)} style={{ minHeight:90 }} />
+              </div>
+            )}
+            <CheckGroup
+              label="How do you currently stay informed about public affairs? *"
+              options={["Books","Podcasts","Newspapers","Research Papers","Policy Reports","Social Media","Academic Study"]}
+              field="stayInformed" cols={2}
+            />
+            <div className="afg">
+              <label className="aflbl">List 3 books, podcasts, or resources that have influenced your thinking.</label>
+              <div style={{ fontSize:".72rem", color:C.muted, marginBottom:".5rem", lineHeight:1.5, fontStyle:"italic" }}>This question alone tells us a great deal about you.</div>
+              <textarea className={fta} placeholder="1. …&#10;2. …&#10;3. …" value={pc_f.resources} onChange={e => u("resources", e.target.value)} style={{ minHeight:100 }} />
+            </div>
+            <div style={{ display:"flex", justifyContent:"space-between", marginTop:".5rem" }}>
+              <BtnBack onClick={() => setStep(2)} />
+              <BtnNext onClick={() => setStep(4)} disabled={pc_f.stayInformed.length === 0 || !pc_f.prevExp} />
+            </div>
+          </div>
+        )}
+
+        {/* ── STEP 4 GOLD-EN: Community Fit ── */}
+        {step === 4 && ge && (
+          <div className="fi2">
+            <div style={{ fontSize:".74rem", fontWeight:700, textTransform:"uppercase", letterSpacing:".12em", color:C.muted, marginBottom:"1.25rem" }}>
+              Section 4 — Community Fit
+            </div>
+            <div className="afg">
+              <label className="aflbl">Why do you want to join the GOLD-EN Circle? *</label>
+              <div style={{ fontSize:".72rem", color:C.muted, marginBottom:".5rem", lineHeight:1.5 }}>Speak honestly. What draws you to this community specifically? Minimum 30 words.</div>
+              <textarea className={fta} placeholder="What do you hope to gain? What makes you ready for this community right now?" value={ge_f.whyJoin} onChange={e => u("whyJoin", e.target.value)} style={{ minHeight:130 }} />
+              <div style={{ textAlign:"right", fontSize:".68rem", color:ge_f.whyJoin.split(/\s+/).filter(Boolean).length>=30?C.forestMid:C.muted, marginTop:".3rem" }}>
+                {ge_f.whyJoin.split(/\s+/).filter(Boolean).length} words {ge_f.whyJoin.split(/\s+/).filter(Boolean).length>=30?"✓":"(min 30)"}
+              </div>
+            </div>
+            <div className="afg">
+              <label className="aflbl">What value can you contribute to the community? *</label>
+              <textarea className={fta} placeholder="What skills, experiences, networks, or perspectives do you bring that would benefit other members?" value={ge_f.contribution} onChange={e => u("contribution", e.target.value)} style={{ minHeight:100 }} />
+            </div>
+            <div className="afg">
+              <label className="aflbl">How did you hear about GOLD? *</label>
+              <select className={fs} value={ge_f.heardAbout} onChange={e => u("heardAbout", e.target.value)}>
+                <option value="">Select an option</option>
+                {["Social Media (Instagram)","Social Media (Twitter/X)","Social Media (LinkedIn)","WhatsApp / Telegram","Friend or Colleague","RE-BUILD Podcast","Google Search","GOLD Event or Conference","Other"].map(o => <option key={o}>{o}</option>)}
+              </select>
+            </div>
+            <CheckGroup
+              label="Would you like to receive information about other GOLD programs?"
+              options={["Future Leaders Initiative (FLI)","RE-BUILD Podcast","GOLD-EN Circle","Policy Circle","Conferences & Events","Volunteer Opportunities"]}
+              field="otherPrograms" cols={2}
+            />
+            <div className="cbrow" onClick={() => setCommitted(c => !c)}>
+              <div className={`cbx${committed ? " cbx-ge" : ""}`}>{committed && <I.Check />}</div>
+              <div className="cblbl">I understand that the GOLD-EN Circle is a community for active builders and that <strong>membership is subject to review</strong>. I commit to active participation and upholding the values of the GOLD community if selected.</div>
+            </div>
+            <div style={{ display:"flex", justifyContent:"space-between", marginTop:".5rem" }}>
+              <BtnBack onClick={() => setStep(3)} />
+              <button onClick={submit} disabled={!ok4 || loading} className="sub-ge" style={{ width:"auto", padding:".85rem 2rem" }}>
+                {loading ? "Submitting…" : <><I.Send /> Submit Application</>}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* ── STEP 4 POLICY: Nation Building Perspective ── */}
+        {step === 4 && !ge && (
+          <div className="fi2">
+            <div style={{ fontSize:".74rem", fontWeight:700, textTransform:"uppercase", letterSpacing:".12em", color:C.muted, marginBottom:"1.25rem" }}>
+              Section 4 — Nation Building Perspective
+            </div>
+            <div className="afg">
+              <label className="aflbl">In your opinion, what does nation building mean? *</label>
+              <textarea className={fta} placeholder="Go beyond the textbook. What does nation building mean to you personally — in practice?" value={pc_f.nationBuilding} onChange={e => u("nationBuilding", e.target.value)} style={{ minHeight:110 }} />
+            </div>
+            <div className="afg">
+              <label className="aflbl">What role do you hope to play in shaping society over the next decade? *</label>
+              <textarea className={fta} placeholder="Be specific and ambitious. Where do you see yourself contributing — and how?" value={pc_f.roleNextDecade} onChange={e => u("roleNextDecade", e.target.value)} style={{ minHeight:110 }} />
+            </div>
+            <div className="afg">
+              <label className="aflbl">Why do you want to join The Policy Circle? *</label>
+              <div style={{ fontSize:".72rem", color:C.muted, marginBottom:".5rem", lineHeight:1.5 }}>Speak honestly and specifically. Minimum 30 words.</div>
+              <textarea className={fta} placeholder="What draws you to this community? What do you hope to gain and contribute?" value={pc_f.whyJoin} onChange={e => u("whyJoin", e.target.value)} style={{ minHeight:120 }} />
+              <div style={{ textAlign:"right", fontSize:".68rem", color:pc_f.whyJoin.split(/\s+/).filter(Boolean).length>=30?C.forestMid:C.muted, marginTop:".3rem" }}>
+                {pc_f.whyJoin.split(/\s+/).filter(Boolean).length} words {pc_f.whyJoin.split(/\s+/).filter(Boolean).length>=30?"✓":"(min 30)"}
+              </div>
+            </div>
+            <div className="afg">
+              <label className="aflbl">What value can you contribute to discussions and activities? *</label>
+              <textarea className={fta} placeholder="What perspective, experience, research, or skills do you bring that would enrich the community?" value={pc_f.contribution} onChange={e => u("contribution", e.target.value)} style={{ minHeight:100 }} />
+            </div>
+            <div className="afg">
+              <label className="aflbl">How did you hear about GOLD? *</label>
+              <select className={fs} value={pc_f.heardAbout} onChange={e => u("heardAbout", e.target.value)}>
+                <option value="">Select an option</option>
+                {["Social Media (Instagram)","Social Media (Twitter/X)","Social Media (LinkedIn)","WhatsApp / Telegram","Friend or Colleague","RE-BUILD Podcast","Google Search","GOLD Event or Conference","Other"].map(o => <option key={o}>{o}</option>)}
+              </select>
+            </div>
+            <CheckGroup
+              label="Would you like to receive information about other GOLD programs?"
+              options={["Future Leaders Initiative (FLI)","RE-BUILD Podcast","GOLD-EN Circle","Policy Circle","Conferences & Events","Volunteer Opportunities"]}
+              field="otherPrograms" cols={2}
+            />
+            <div className="cbrow" onClick={() => setCommitted(c => !c)}>
+              <div className={`cbx${committed ? " cbx-pc" : ""}`}>{committed && <I.Check />}</div>
+              <div className="cblbl">I understand that The Policy Circle exists to develop informed and responsible leaders committed to <strong>constructive dialogue and nation building</strong>. I commit to active, respectful participation if selected.</div>
+            </div>
+            <div style={{ display:"flex", justifyContent:"space-between", marginTop:".5rem" }}>
+              <BtnBack onClick={() => setStep(3)} />
+              <button onClick={submit} disabled={!ok4 || loading} className="sub-pc" style={{ width:"auto", padding:".85rem 2rem" }}>
+                {loading ? "Submitting…" : <><I.Send /> Submit Application</>}
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -782,7 +1192,11 @@ function GoldenCirclePage({ set }) {
             <div className="geb">GOLD Exclusive · Entrepreneurship Circle</div>
             <h1 className="geh1">GOLD-EN Circle</h1>
             <div className="geh1s">For founders, builders, and operators serious about execution.</div>
-            <p className="ged">An exclusive, closed-door entrepreneurship mentorship circle for Africa's most intentional young founders and builders. This is not a networking group. It is a curated execution community where serious people get serious support.</p>
+            <p className="ged">A curated, closed-door entrepreneurship mentorship community for builders, founders, creators, professionals, and visionaries actively working on meaningful projects, businesses, ministries, initiatives, or ideas. Membership is by application and review.</p>
+            <div style={{ background: "rgba(218,165,32,.08)", border: "1px solid rgba(218,165,32,.2)", borderRadius: 12, padding: "1rem 1.25rem", marginBottom: "1.75rem" }}>
+              <div style={{ fontSize: ".65rem", fontWeight: 700, letterSpacing: ".15em", textTransform: "uppercase", color: C.geLight, marginBottom: ".6rem" }}>The GOLD-EN Circle is not an introductory program</div>
+              <div style={{ fontSize: ".82rem", color: "rgba(253,246,220,.62)", lineHeight: 1.65 }}>It is a curated community for those actively building — a business, startup, ministry, nonprofit, social enterprise, research project, or any meaningful work capable of creating impact.</div>
+            </div>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
               <button className="btn-ge" onClick={() => set("golden-apply")}>Apply to Join <I.ArrowRight /></button>
               <button className="btn-ge-ol" onClick={() => set("circles")}>← All Circles</button>
@@ -877,7 +1291,15 @@ function PolicyCirclePage({ set }) {
             <div className="pcb">GOLD Exclusive · Civic & Policy Circle</div>
             <h1 className="pch1">The Policy Circle</h1>
             <div className="pch1s">For those who believe governance is the foundation of a flourishing Africa.</div>
-            <p className="pcd">A closed-door civic and policy leadership mentorship circle for Africa's most intentional emerging leaders in governance, public service, law, and nation-building. This is a space for those who take leadership seriously — not as a career move, but as a calling.</p>
+            <p className="pcd">A strategic community for individuals interested in governance, public policy, politics, civic engagement, and national development. Members engage in policy discussions, leadership conversations, governance education, and research-driven solutions to Africa's societal challenges. This is leadership as a calling — not a career move.</p>
+            <div style={{ background: "rgba(122,176,224,.07)", border: "1px solid rgba(122,176,224,.2)", borderRadius: 12, padding: "1rem 1.25rem", marginBottom: "1.75rem" }}>
+              <div style={{ fontSize: ".65rem", fontWeight: 700, letterSpacing: ".15em", textTransform: "uppercase", color: C.pcAccent, marginBottom: ".6rem" }}>Focus Areas</div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: ".5rem" }}>
+                {["Governance","Public Policy","Politics","Civic Leadership","Economic Development","African Development"].map(t => (
+                  <span key={t} style={{ fontSize: ".68rem", fontWeight: 600, padding: ".22rem .65rem", borderRadius: 6, background: "rgba(122,176,224,.1)", color: C.pcAccent, border: "1px solid rgba(122,176,224,.18)" }}>{t}</span>
+                ))}
+              </div>
+            </div>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
               <button className="btn-pc" onClick={() => set("policy-apply")}>Apply for Admission <I.ArrowRight /></button>
               <button className="btn-pc-ol" onClick={() => set("circles")}>← All Circles</button>
@@ -998,43 +1420,113 @@ function HomePage({ set }) {
     <section className="hero"><div className="hero-mesh" /><div className="hero-dots" />
       <div className="hero-cnt">
         <div className="fu">
-          <div className="hpill"><div className="hpill-dot" />Pan-African Leadership Institute</div>
-          <h1 className="h1">Raising <em>Leaders.</em><br />Building <em>Nations.</em><br />Transforming Africa.</h1>
-          <p className="hsub">Equipping young Africans with the leadership capacity, character, and competence required to shape the future of the continent.</p>
+          <div className="hpill"><div className="hpill-dot" />Governmental & Organizational Leadership Development</div>
+          <h1 className="h1">Building Africa<br />Through <em>Leadership.</em></h1>
+          <p className="hsub">We equip young Africans with the character, competence, and capacity required to shape nations, transform institutions, and solve society's greatest challenges.</p>
           <div className="hbtns">
             <button className="btn-gold" onClick={() => set("fli")}>Join FLI <I.ArrowRight /></button>
-            <button className="btn-wh" onClick={() => set("circles")}>Explore The Circles</button>
+            <button className="btn-wh" onClick={() => set("ecosystem")}>Our Ecosystem</button>
           </div>
           <div className="hstats">{STATS.map(s => <div key={s.l}><div className="sn">{s.n}</div><div className="sl">{s.l}</div></div>)}</div>
         </div>
         <div className="hvisual fu2" style={{ position: "relative" }}>
-          <div className="hfl hfl1"><div className="fn">500+</div><div className="fl">Leaders Trained</div></div>
+          <div className="hfl hfl1"><div className="fn">500+</div><div className="fl">Leaders Developed</div></div>
           <div className="hcard">
             <div className="hcbadge">Future Leaders Initiative</div>
-            <div className="hctitle">9-Module Leadership Curriculum</div>
-            {["Leadership Foundations","African History","Governance & Policy","Critical Thinking","Entrepreneurship"].map(m => <div className="hci" key={m}><div className="hcdot" />{m}</div>)}
+            <div className="hctitle">9 Learning Pillars</div>
+            {["Leadership Foundations","African History & Civilization","Governance & Public Policy","Critical Thinking","Entrepreneurship"].map(m => <div className="hci" key={m}><div className="hcdot" />{m}</div>)}
           </div>
           <div className="hfl hfl2"><div className="fn">12+</div><div className="fl">Communities Reached</div></div>
         </div>
       </div>
     </section>
 
-    {/* Circles Teaser */}
+    {/* ── WHY GOLD EXISTS ── */}
+    <section style={{ background: C.offWhite, padding: "5rem 2rem" }}>
+      <div className="sec-in" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
+        <div>
+          <div className="stag">Why GOLD Exists</div>
+          <h2 className="stitle" style={{ marginBottom: "1.5rem" }}>Nations Rise or Fall on the <em>Quality of Their Leaders</em></h2>
+          <p style={{ fontSize: "1.05rem", lineHeight: 1.9, color: C.muted, marginBottom: "1.25rem" }}>Africa's future will not be determined by resources alone. It will be determined by leadership.</p>
+          <p style={{ fontSize: "1rem", lineHeight: 1.85, color: C.muted, marginBottom: "1.25rem" }}>GOLD was founded on the conviction that nations rise or fall on the quality of their leaders. Through leadership development, mentorship, strategic conversations, and community impact, we are raising a generation committed to Africa's transformation.</p>
+          <p style={{ fontSize: "1rem", lineHeight: 1.85, color: C.muted, marginBottom: "2rem" }}>We identify, develop, connect, and deploy transformational leaders who will influence government, business, education, ministry, and civil society — for sustainable nation building across Africa.</p>
+          <div style={{ padding: "1.25rem 1.5rem", background: C.forestPale, borderLeft: `3px solid ${C.gold}`, borderRadius: "0 10px 10px 0" }}>
+            <p style={{ fontFamily: "'Playfair Display',serif", fontStyle: "italic", fontSize: "1rem", color: C.forest, lineHeight: 1.75 }}>"We do not develop leaders merely for influence. We develop leaders for impact."</p>
+          </div>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+          {[{ Icon: I.Globe, t: "Africa's Moment", d: "With the world's youngest population, the leadership we develop today will define Africa's trajectory for generations." },
+            { Icon: I.Shield, t: "The Ethics Crisis", d: "Corruption and poor governance cost Africa billions annually. Raising ethical leaders is the foundation of development." },
+            { Icon: I.Users, t: "Human Capital First", d: "Economic transformation begins with transformed minds. GOLD invests in the most powerful resource Africa has — its people." },
+            { Icon: I.Home, t: "Governance Matters", d: "Competent and visionary leadership in every sector is what separates thriving nations from struggling ones." }].map(c => (
+            <div key={c.t} style={{ background: "#fff", border: `1px solid rgba(26,74,46,.1)`, borderRadius: 14, padding: "1.5rem", boxShadow: "0 2px 12px rgba(26,74,46,.04)" }}>
+              <div style={{ width: 44, height: 44, borderRadius: 11, background: C.forestPale, color: C.forest, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "1rem" }}><c.Icon /></div>
+              <div style={{ fontWeight: 700, fontSize: ".93rem", color: C.text, marginBottom: ".45rem" }}>{c.t}</div>
+              <div style={{ fontSize: ".81rem", lineHeight: 1.68, color: C.muted }}>{c.d}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ── VISION & MISSION ── */}
+    <section className="sec dark">
+      <div className="sec-in">
+        <div className="stag">Our Foundation</div>
+        <h2 className="stitle" style={{ marginBottom: "2rem" }}>Vision & <em>Mission</em></h2>
+        <div className="vm-grid">
+          <div className="vm vmv"><div className="vmlbl">Our Vision</div><div className="vmtxt">"{VISION}"</div></div>
+          <div style={{ background: "rgba(255,255,255,.06)", border: "1px solid rgba(201,160,32,.15)", borderRadius: 16, padding: "2.5rem" }}>
+            <div className="vmlbl">Our Mission</div>
+            <div className="vmtxt" style={{ color: "rgba(255,255,255,.88)" }}>"{MISSION}"</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── ECOSYSTEM TEASER ── */}
+    <section style={{ background: C.cream, padding: "5rem 2rem" }}>
+      <div className="sec-in">
+        <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+          <div className="stag" style={{ justifyContent: "center" }}>The GOLD Ecosystem</div>
+          <h2 className="stitle" style={{ marginBottom: "1rem" }}>Five Pillars of the <em>Movement</em></h2>
+          <p className="ssub" style={{ margin: "0 auto", textAlign: "center", maxWidth: 560 }}>GOLD is not just a program. It is a growing ecosystem of leadership development, builders communities, governance spaces, thought leadership, and nation-building projects.</p>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: "1rem" }}>
+          {ECOSYSTEM.map(e => (
+            <div key={e.id} onClick={() => set(e.id)} style={{ background: "#fff", border: `1px solid rgba(26,74,46,.09)`, borderRadius: 16, padding: "1.75rem 1.25rem", cursor: "pointer", transition: "all .3s", textAlign: "center" }}
+              onMouseEnter={ev => { ev.currentTarget.style.borderColor = e.color; ev.currentTarget.style.transform = "translateY(-5px)"; ev.currentTarget.style.boxShadow = `0 12px 36px ${e.color}22`; }}
+              onMouseLeave={ev => { ev.currentTarget.style.borderColor = "rgba(26,74,46,.09)"; ev.currentTarget.style.transform = "none"; ev.currentTarget.style.boxShadow = "none"; }}>
+              <div style={{ width: 52, height: 52, borderRadius: "50%", background: e.pale, color: e.color, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1rem" }}><e.Icon /></div>
+              <div style={{ fontSize: ".58rem", fontWeight: 700, letterSpacing: ".15em", textTransform: "uppercase", color: e.color, marginBottom: ".5rem" }}>{e.label}</div>
+              <div style={{ fontFamily: "'Playfair Display',serif", fontSize: ".93rem", fontWeight: 700, color: C.text, lineHeight: 1.3, marginBottom: ".6rem" }}>{e.title}</div>
+              <div style={{ fontSize: ".74rem", lineHeight: 1.65, color: C.muted }}>{e.desc.substring(0, 80)}…</div>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: ".35rem", fontSize: ".7rem", fontWeight: 700, color: e.color, marginTop: "1rem", letterSpacing: ".06em", textTransform: "uppercase" }}>Explore <I.ArrowRight /></div>
+            </div>
+          ))}
+        </div>
+        <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
+          <button className="btn-fg" onClick={() => set("ecosystem")} style={{ padding: ".85rem 2rem", borderRadius: 10, fontSize: ".88rem" }}>View the Full Ecosystem <I.ArrowRight /></button>
+        </div>
+      </div>
+    </section>
+
+    {/* ── CIRCLES TEASER ── */}
     <section style={{ background: "linear-gradient(135deg,#0D1B10,#1A4A2E)", padding: "5rem 2rem" }}>
       <div className="sec-in" style={{ textAlign: "center" }}>
         <div style={{ fontFamily: "'Cinzel',serif", fontSize: ".6rem", fontWeight: 600, letterSpacing: ".28em", color: C.goldLight, textTransform: "uppercase", marginBottom: "1rem", opacity: .7 }}>GOLD EXCLUSIVE MEMBERSHIP</div>
         <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(2rem,4vw,3rem)", fontWeight: 700, color: "#fff", marginBottom: "1rem", lineHeight: 1.2 }}>Introducing <span style={{ fontStyle: "italic", color: C.goldLight }}>The Circles</span></h2>
-        <p style={{ color: "rgba(255,255,255,.52)", fontSize: ".96rem", lineHeight: 1.85, maxWidth: 520, margin: "0 auto 3rem" }}>Two closed-door leadership mentorship circles for Africa's most intentional emerging founders, builders, and civic leaders.</p>
+        <p style={{ color: "rgba(255,255,255,.52)", fontSize: ".96rem", lineHeight: 1.85, maxWidth: 520, margin: "0 auto 3rem" }}>Two closed-door, application-only mentorship communities for Africa's most intentional emerging founders, builders, and civic leaders.</p>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", maxWidth: 740, margin: "0 auto" }}>
-          {[{ bg: "linear-gradient(145deg,#1A1200,#2A1E00)", bor: "rgba(218,165,32,.3)", hover: "rgba(184,134,11,.25)", Ico: I.Zap, col: C.geLight, name: "GOLD-EN Circle", desc: "Entrepreneurship mentorship for founders, builders, and operators building Africa's next great ventures.", pg: "golden-circle" },
-          { bg: "linear-gradient(145deg,#050F1C,#0D1E2E)", bor: "rgba(122,176,224,.3)", hover: "rgba(26,58,92,.35)", Ico: I.Shield, col: C.pcAccent, name: "Policy Circle", desc: "Civic and policy leadership mentorship for those called to governance, public service, and nation-building.", pg: "policy-circle" }].map(x => (
+          {[{ bg:"linear-gradient(145deg,#1A1200,#2A1E00)", bor:"rgba(218,165,32,.3)", hover:"rgba(184,134,11,.25)", Ico:I.Zap, col:C.geLight, name:"GOLD-EN Circle", desc:"Entrepreneurship mentorship for founders, builders, and operators building Africa's next great ventures.", pg:"golden-circle" },
+            { bg:"linear-gradient(145deg,#050F1C,#0D1E2E)", bor:"rgba(122,176,224,.3)", hover:"rgba(26,58,92,.35)", Ico:I.Shield, col:C.pcAccent, name:"Policy Circle", desc:"Civic and policy leadership mentorship for those called to governance, public service, and nation-building.", pg:"policy-circle" }].map(x => (
             <div key={x.name} style={{ background: x.bg, border: `1px solid ${x.bor}`, borderRadius: 16, padding: "2rem", cursor: "pointer", transition: "all .3s" }} onClick={() => set(x.pg)}
               onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-5px)"; e.currentTarget.style.boxShadow = `0 20px 50px ${x.hover}`; }}
               onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; }}>
               <div style={{ color: x.col, marginBottom: ".85rem" }}><x.Ico /></div>
               <div style={{ fontFamily: "'Cinzel',serif", fontWeight: 600, fontSize: "1rem", color: x.col, marginBottom: ".5rem" }}>{x.name}</div>
               <div style={{ fontSize: ".82rem", color: x.col === C.geLight ? "rgba(253,246,220,.52)" : "rgba(234,240,248,.5)", lineHeight: 1.65, marginBottom: "1rem" }}>{x.desc}</div>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: ".4rem", color: x.col, fontSize: ".73rem", fontWeight: 700, letterSpacing: ".08em" }}>Apply Now <I.ArrowRight /></div>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: ".4rem", color: x.col, fontSize: ".73rem", fontWeight: 700, letterSpacing: ".08em" }}>Learn More <I.ArrowRight /></div>
             </div>
           ))}
         </div>
@@ -1042,48 +1534,82 @@ function HomePage({ set }) {
       </div>
     </section>
 
-    <section className="sec" style={{ background: C.offWhite }}>
-      <div className="sec-in">
-        <div className="stag">Our Foundation</div><h2 className="stitle" style={{ marginBottom: ".5rem" }}>Vision & <em>Mission</em></h2>
-        <div className="vm-grid">
-          <div className="vm vmv"><div className="vmlbl">Our Vision</div><div className="vmtxt">"To empower and develop individuals, especially young Africans, as human capital for nation building."</div></div>
-          <div className="vm vmm"><div className="vmlbl">Our Mission</div><div className="vmtxt">"To raise competent, ethical, visionary, and purpose-driven leaders who will transform Africa through service, innovation, and influence."</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section className="sec dark">
-      <div className="sec-in">
-        <div className="stag">The Imperative</div><h2 className="stitle" style={{ marginBottom: ".75rem" }}>Why <em>Leadership</em> Matters</h2>
-        <p className="ssub">Africa's greatest challenge is not resources — it is the lack of ethical, capable leaders equipped to harness them.</p>
-        <div className="why-grid">
-          {[{ Icon: I.Globe, t: "Africa's Moment", d: "With the world's youngest population, the leadership we develop today will define Africa's trajectory for generations." }, { Icon: I.Shield, t: "The Ethics Crisis", d: "Corruption and poor governance cost Africa billions annually. Raising ethical leaders is the foundation of development." }, { Icon: I.Users, t: "Human Capital First", d: "Economic transformation begins with transformed minds. GOLD invests in the most powerful resource Africa has." }, { Icon: I.Home, t: "Governance Matters", d: "Competent and visionary leadership in every sector separates thriving nations from struggling ones." }, { Icon: I.Handshake, t: "The Mentorship Gap", d: "Many young Africans lack access to mentors who can guide development. We bridge that gap." }, { Icon: I.Lightbulb, t: "Innovation is African", d: "Africa's challenges demand African solutions. We cultivate critical thinkers who reimagine what's possible." }].map(c => (
-            <div className="wcard" key={c.t}><div className="wicon"><c.Icon /></div><div className="wtitle">{c.t}</div><div className="wdesc">{c.d}</div></div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section className="sec" style={{ background: C.cream }}>
-      <div className="sec-in">
-        <div className="stag">What We Do</div><h2 className="stitle" style={{ marginBottom: ".75rem" }}>Our <em>Programs</em></h2>
-        <p className="ssub">Structured pathways to develop every dimension of transformational leadership.</p>
-        <div className="pgrid">{PROGRAMS.map(p => <div className="pcard" key={p.title} onClick={() => set(p.link)}><div className="picon"><p.Icon /></div><div className="ptitle">{p.title}</div><div className="pdesc">{p.desc}</div><div className="plink">Learn More <I.ArrowRight /></div></div>)}</div>
-      </div>
-    </section>
-
+    {/* ── IMPACT STRIP ── */}
     <div className="ist"><div className="ist-in">{STATS.map(s => <div key={s.l}><div className="in">{s.n}</div><div className="il">{s.l}</div></div>)}</div></div>
 
+    {/* ── TESTIMONIALS ── */}
     <section className="sec" style={{ background: C.offWhite }}>
       <div className="sec-in">
-        <div className="stag">Voices of Change</div><h2 className="stitle">What Our <em>Fellows</em> Say</h2>
-        <div className="tgrid">{TESTIMONIALS.map(t => <div className="tcard" key={t.name}><div className="tq">"</div><p className="ttxt">{t.text}</p><div className="tau"><div className="tav">{t.init}</div><div><div className="tn">{t.name}</div><div className="tr">{t.role}</div></div></div></div>)}</div>
+        <div className="stag">Voices of Change</div>
+        <h2 className="stitle">What Our <em>Fellows</em> Say</h2>
+        <div className="tgrid">{TESTIMONIALS.map(t => (
+          <div className="tcard" key={t.name}>
+            <div style={{ fontSize: ".62rem", fontWeight: 700, letterSpacing: ".12em", textTransform: "uppercase", color: C.forestMid, background: C.forestPale, padding: ".22rem .65rem", borderRadius: 6, display: "inline-block", marginBottom: "1rem" }}>{t.tag}</div>
+            <div className="tq">"</div>
+            <p className="ttxt" style={{ display: "-webkit-box", WebkitLineClamp: 6, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{t.text}</p>
+            <div className="tau"><div className="tav">{t.init}</div><div><div className="tn">{t.name}</div><div className="tr">{t.role}</div></div></div>
+          </div>
+        ))}</div>
       </div>
     </section>
 
+    {/* ── CTA ── */}
     <div className="ctab">
-      <h2>Ready to Lead Africa's Future?</h2>
-      <p>Join thousands of young Africans developing the character, competence, and vision to transform the continent.</p>
+      <h2>Ready to Build Africa Through Leadership?</h2>
+      <p>Join a growing community of young Africans developing the character, competence, and conviction to transform the continent.</p>
+      <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+        <button className="btn-fg" onClick={() => set("fli")} style={{ padding: ".9rem 2rem", borderRadius: 10, fontSize: ".88rem" }}>Apply to FLI</button>
+        <button style={{ background: "transparent", color: C.forest, padding: ".9rem 2rem", borderRadius: 10, border: `1.5px solid ${C.forest}`, fontSize: ".88rem", cursor: "pointer", fontFamily: "'DM Sans',sans-serif" }} onClick={() => set("circles")}>Explore The Circles</button>
+      </div>
+    </div>
+  </>);
+}
+
+// ─── Ecosystem Page ───────────────────────────────────────────────────────────
+function EcosystemPage({ set }) {
+  return (<>
+    <section className="sec" style={{ paddingTop: "8rem", background: C.offWhite }}>
+      <div className="sec-in">
+        <div style={{ textAlign: "center", maxWidth: 680, margin: "0 auto 4rem" }}>
+          <div className="stag" style={{ justifyContent: "center" }}>What GOLD Has Built</div>
+          <h1 className="stitle" style={{ marginBottom: "1rem" }}>The GOLD <em>Ecosystem</em></h1>
+          <p className="ssub" style={{ textAlign: "center", margin: "0 auto" }}>Five interconnected pillars that together form Africa's most intentional leadership development ecosystem — each distinct, each essential, all connected.</p>
+        </div>
+        {ECOSYSTEM.map((e, idx) => (
+          <div key={e.id} style={{ display: "grid", gridTemplateColumns: idx % 2 === 0 ? "1fr 1.1fr" : "1.1fr 1fr", gap: "4rem", alignItems: "center", marginBottom: "5rem", paddingBottom: "5rem", borderBottom: idx < ECOSYSTEM.length - 1 ? "1px solid rgba(26,74,46,.1)" : "none" }}>
+            {idx % 2 !== 0 && (
+              <div style={{ background: "#fff", border: `1px solid ${e.color}30`, borderRadius: 20, padding: "3rem", textAlign: "center", boxShadow: `0 8px 40px ${e.color}10` }}>
+                <div style={{ width: 72, height: 72, borderRadius: "50%", background: e.pale, color: e.color, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1.25rem" }}><e.Icon /></div>
+                <div style={{ fontFamily: "'Cinzel',serif", fontSize: ".62rem", fontWeight: 600, letterSpacing: ".2em", textTransform: "uppercase", color: e.color, marginBottom: ".75rem" }}>{e.label}</div>
+                <div style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.6rem", fontWeight: 700, color: C.text, lineHeight: 1.2, marginBottom: "1rem" }}>{e.title}</div>
+                <div style={{ fontSize: ".72rem", fontWeight: 700, color: e.color, letterSpacing: ".1em", textTransform: "uppercase", padding: ".28rem .8rem", background: e.pale, borderRadius: 100, display: "inline-block", border: `1px solid ${e.color}33` }}>{e.tag}</div>
+              </div>
+            )}
+            <div>
+              <div style={{ fontSize: ".65rem", fontWeight: 700, letterSpacing: ".2em", textTransform: "uppercase", color: e.color, marginBottom: ".75rem", display: "flex", alignItems: "center", gap: ".5rem" }}>
+                <span style={{ display: "block", width: 18, height: 2, background: e.color, borderRadius: 1 }} />{e.label}
+              </div>
+              <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(1.6rem,3vw,2.4rem)", fontWeight: 700, color: C.text, marginBottom: "1rem", lineHeight: 1.2 }}>{e.title}</h2>
+              <p style={{ fontSize: "1rem", lineHeight: 1.85, color: C.muted, marginBottom: "1.5rem" }}>{e.desc}</p>
+              <button onClick={() => set(e.id)} style={{ background: e.color, color: "#fff", border: "none", borderRadius: 10, padding: ".82rem 1.75rem", fontWeight: 700, fontSize: ".85rem", cursor: "pointer", fontFamily: "'DM Sans',sans-serif", display: "inline-flex", alignItems: "center", gap: ".5rem", transition: "all .2s" }}>
+                Explore {e.title} <I.ArrowRight />
+              </button>
+            </div>
+            {idx % 2 === 0 && (
+              <div style={{ background: "#fff", border: `1px solid ${e.color}30`, borderRadius: 20, padding: "3rem", textAlign: "center", boxShadow: `0 8px 40px ${e.color}10` }}>
+                <div style={{ width: 72, height: 72, borderRadius: "50%", background: e.pale, color: e.color, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1.25rem" }}><e.Icon /></div>
+                <div style={{ fontFamily: "'Cinzel',serif", fontSize: ".62rem", fontWeight: 600, letterSpacing: ".2em", textTransform: "uppercase", color: e.color, marginBottom: ".75rem" }}>{e.label}</div>
+                <div style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.6rem", fontWeight: 700, color: C.text, lineHeight: 1.2, marginBottom: "1rem" }}>{e.title}</div>
+                <div style={{ fontSize: ".72rem", fontWeight: 700, color: e.color, letterSpacing: ".1em", textTransform: "uppercase", padding: ".28rem .8rem", background: e.pale, borderRadius: 100, display: "inline-block", border: `1px solid ${e.color}33` }}>{e.tag}</div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+    <div className="ctab">
+      <h2>Ready to Step Into the Ecosystem?</h2>
+      <p>Every pillar of GOLD exists to develop one thing: transformational leaders who will build a better Africa.</p>
       <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
         <button className="btn-fg" onClick={() => set("fli")} style={{ padding: ".9rem 2rem", borderRadius: 10, fontSize: ".88rem" }}>Apply to FLI</button>
         <button style={{ background: "transparent", color: C.forest, padding: ".9rem 2rem", borderRadius: 10, border: `1.5px solid ${C.forest}`, fontSize: ".88rem", cursor: "pointer", fontFamily: "'DM Sans',sans-serif" }} onClick={() => set("circles")}>Explore The Circles</button>
@@ -1099,19 +1625,24 @@ function AboutPage() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "start" }}>
           <div>
             <div className="stag">Our Story</div><h1 className="stitle" style={{ marginBottom: "1.5rem" }}>About <em>GOLD</em></h1>
-            <p style={{ fontSize: "1rem", lineHeight: 1.85, color: C.muted, marginBottom: "1.25rem" }}>GOLD — Governmental and Organizational Leadership Development — was born out of a deep conviction: that Africa's greatest need is not more resources, but more leaders equipped with integrity, vision, and the competence to serve.</p>
-            <p style={{ fontSize: "1rem", lineHeight: 1.85, color: C.muted, marginBottom: "1.25rem" }}>We exist to raise a generation of transformational leaders in business, government, ministry, education, and community development who will contribute meaningfully to nation-building across Nigeria and the African continent.</p>
-            <p style={{ fontSize: "1rem", lineHeight: 1.85, color: C.muted }}>Through structured programs, mentorship, conferences, and our media arm, we are building an ecosystem that nurtures leaders from the inside out — character first, competence second, contribution always.</p>
+            <p style={{ fontSize: "1rem", lineHeight: 1.85, color: C.muted, marginBottom: "1.25rem" }}>GOLD — Governmental and Organizational Leadership Development — was born out of a deep conviction: that Africa's future will not be determined by resources alone. It will be determined by leadership.</p>
+            <p style={{ fontSize: "1rem", lineHeight: 1.85, color: C.muted, marginBottom: "1.25rem" }}>We exist to identify, develop, connect, and deploy transformational leaders who will influence government, business, education, ministry, and civil society for sustainable nation building in Africa.</p>
+            <p style={{ fontSize: "1rem", lineHeight: 1.85, color: C.muted, marginBottom: "1.25rem" }}>GOLD currently operates from <strong>Akure, Ondo State, Nigeria</strong>, with a growing vision to expand its programs and communities across Nigeria and Africa.</p>
+            <p style={{ fontSize: "1rem", lineHeight: 1.85, color: C.muted }}>Through our five-pillar ecosystem — the Future Leaders Initiative, GOLD-EN Circle, Policy Circle, RE-BUILD Podcast, and Community Impact — we are building an institution that shapes African leaders from the inside out. Character first. Competence second. Contribution always.</p>
           </div>
           <div>
-            <div className="vm vmv" style={{ marginBottom: "1.5rem" }}><div className="vmlbl">Our Vision</div><div className="vmtxt">"To empower and develop individuals, especially young Africans, as human capital for nation building."</div></div>
-            <div className="vm vmm"><div className="vmlbl">Our Mission</div><div className="vmtxt">"To raise competent, ethical, visionary, and purpose-driven leaders who will transform Africa through service, innovation, and influence."</div></div>
+            <div className="vm vmv" style={{ marginBottom: "1.5rem" }}><div className="vmlbl">Our Vision</div><div className="vmtxt">"{VISION}"</div></div>
+            <div className="vm vmm"><div className="vmlbl">Our Mission</div><div className="vmtxt" style={{ fontSize: "1.1rem" }}>"{MISSION}"</div></div>
           </div>
         </div>
       </div>
     </section>
-    <section className="sec"><div className="sec-in"><div className="stag">What We Stand For</div><h2 className="stitle">Core <em>Values</em></h2><div className="vgrid">{CORE_VALUES.map(v => <div className="vcard" key={v.name}><div className="vicon"><v.Icon /></div><div className="vname">{v.name}</div><div className="vdesc">{v.desc}</div></div>)}</div></div></section>
-    <section className="sec dark"><div className="sec-in" style={{ maxWidth: 760, textAlign: "center" }}><div className="stag" style={{ justifyContent: "center" }}>Philosophy</div><h2 className="stitle" style={{ marginBottom: "1.5rem" }}>Our <em>Philosophy</em></h2><p style={{ fontFamily: "'Playfair Display',serif", fontStyle: "italic", fontSize: "1.2rem", lineHeight: 1.85, color: "rgba(255,255,255,.78)" }}>"True leadership is not about position or power — it is about character and service. Africa needs leaders shaped by purpose, driven by integrity, and committed to the flourishing of their communities and nations."</p></div></section>
+    <section className="sec"><div className="sec-in"><div className="stag">What We Stand For</div><h2 className="stitle">Core <em>Values</em></h2><div className="vgrid">{CORE_VALUES.map(v => <div className="vcard" key={v.name}><div className="vicon"><v.Icon /></div><div className="vname">{v.name}</div><div className="vdesc">{v.desc}</div></div>)}</div>
+      <div style={{ marginTop: "2.5rem", padding: "1.5rem 2rem", background: C.forestPale, borderLeft: `3px solid ${C.gold}`, borderRadius: "0 12px 12px 0", maxWidth: 680 }}>
+        <p style={{ fontFamily: "'Playfair Display',serif", fontStyle: "italic", fontSize: "1.05rem", color: C.forest, lineHeight: 1.75 }}>"We do not develop leaders merely for influence. We develop leaders for impact."</p>
+      </div>
+    </div></section>
+    <section className="sec dark"><div className="sec-in" style={{ maxWidth: 760, textAlign: "center" }}><div className="stag" style={{ justifyContent: "center" }}>Philosophy</div><h2 className="stitle" style={{ marginBottom: "1.5rem" }}>Our <em>Philosophy</em></h2><p style={{ fontFamily: "'Playfair Display',serif", fontStyle: "italic", fontSize: "1.2rem", lineHeight: 1.85, color: "rgba(255,255,255,.78)" }}>"True leadership is not about position or power — it is about character and service. Africa needs leaders shaped by purpose, driven by integrity, and committed to the flourishing of their communities and nations. At GOLD, we believe leadership development is the most strategic investment we can make in Africa's future."</p></div></section>
   </>);
 }
 
@@ -1142,7 +1673,7 @@ function FLIPage({ set }) {
           <div>
             <div className="hpill" style={{ marginBottom: "1rem" }}><div className="hpill-dot" />GOLD Flagship Program</div>
             <h1 className="stitle" style={{ marginBottom: "1rem" }}>Future Leaders <em>Initiative</em></h1>
-            <p style={{ fontSize: ".94rem", lineHeight: 1.8, color: "rgba(255,255,255,.7)", marginBottom: "1.5rem" }}>FLI is GOLD's signature leadership development program — a structured, immersive curriculum that equips young Africans with the knowledge, skills, and character to lead with excellence in every sphere.</p>
+            <p style={{ fontSize: ".94rem", lineHeight: 1.8, color: "rgba(255,255,255,.7)", marginBottom: "1.5rem" }}>The Future Leaders Initiative (FLI) is GOLD's flagship leadership development program designed to prepare young Africans for influence in government, business, ministry, and society. Through rigorous learning, mentorship, assignments, discussions, and practical projects, participants develop the mindset and competencies required for transformational leadership.</p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}><button className="btn-gold" onClick={() => set("join")}>Apply Now <I.ArrowRight /></button><button className="btn-wh">Download Brochure</button></div>
           </div>
           <div style={{ background: "rgba(255,255,255,.06)", borderRadius: 20, padding: "2rem", border: "1px solid rgba(201,160,32,.2)" }}>
@@ -1156,7 +1687,7 @@ function FLIPage({ set }) {
             ))}
           </div>
         </div>
-        <div className="stag">Curriculum</div><h2 className="stitle" style={{ marginBottom: "1.5rem" }}>9 Learning <em>Modules</em></h2>
+        <div className="stag">Learning Pillars</div><h2 className="stitle" style={{ marginBottom: "1.5rem" }}>9 <em>Learning Pillars</em></h2>
         <div className="flic">{FLI_MODULES.map((m, i) => <div className="fmod" key={m}><div className="fnum">0{i + 1}</div><div className="fname">{m}</div></div>)}</div>
       </div>
     </section>
@@ -1193,9 +1724,13 @@ function PodcastPage() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center", marginBottom: "3rem" }}>
           <div>
             <h1 className="stitle" style={{ marginBottom: "1rem" }}>RE-BUILD <em>Podcast</em></h1>
-            <p style={{ fontSize: "1rem", lineHeight: 1.8, color: C.muted }}>Conversations that challenge conventional thinking and equip Africa's next generation of leaders.</p>
+            <p style={{ fontSize: "1rem", lineHeight: 1.8, color: C.muted }}>Conversations on leadership, governance, entrepreneurship, mentorship, faith, and nation building designed to inspire a generation of African leaders.</p>
             <div style={{ display: "flex", gap: ".75rem", marginTop: "1.5rem", flexWrap: "wrap" }}>
-              {["Spotify","Apple Podcasts","YouTube","Google Podcasts"].map(p => <button key={p} style={{ background: "#fff", border: `1px solid rgba(26,74,46,.12)`, color: C.text, padding: ".5rem 1rem", borderRadius: 8, fontSize: ".77rem", cursor: "pointer", fontFamily: "'DM Sans',sans-serif" }}>{p}</button>)}
+              {[["Spotify", SOCIALS.spotify],["Apple Podcasts","#"],["YouTube", SOCIALS.youtube],["Google Podcasts","#"]].map(([p, href]) => (
+                <a key={p} href={href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+                  <button style={{ background: "#fff", border: `1px solid rgba(26,74,46,.12)`, color: C.text, padding: ".5rem 1rem", borderRadius: 8, fontSize: ".77rem", cursor: "pointer", fontFamily: "'DM Sans',sans-serif" }}>{p}</button>
+                </a>
+              ))}
             </div>
           </div>
           <div style={{ background: C.forest, border: `1px solid rgba(201,160,32,.2)`, borderRadius: 20, padding: "2.5rem", textAlign: "center" }}>
@@ -1266,7 +1801,16 @@ function JoinPage() {
         <div style={{ textAlign: "center" }}><div className="stag" style={{ justifyContent: "center" }}>Get Involved</div></div>
         <h1 className="stitle" style={{ textAlign: "center", marginBottom: "1rem" }}>Join the <em>GOLD</em> Movement</h1>
         <p style={{ textAlign: "center", color: C.muted, fontSize: "1rem", lineHeight: 1.8, maxWidth: 520, margin: "0 auto 1rem" }}>Whether as a fellow, volunteer, mentor, partner, or donor — your contribution matters.</p>
-        <div className="jgrid">{JOIN_OPTS.map(j => <div className="jcard" key={j.title}><div className="jico"><j.Icon /></div><div className="jtitle">{j.title}</div><div className="jdesc">{j.desc}</div><button className="btn-fg">{j.action} →</button></div>)}</div>
+        <div className="jgrid">{JOIN_OPTS.map(j => (
+          <div className="jcard" key={j.title}>
+            <div className="jico"><j.Icon /></div>
+            <div className="jtitle">{j.title}</div>
+            <div className="jdesc">{j.desc}</div>
+            <a href={j.form} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+              <button className="btn-fg" style={{ width: "100%" }}>{j.action} →</button>
+            </a>
+          </div>
+        ))}</div>
       </div>
     </section>
     <section className="sec" style={{ paddingTop: "3rem" }}>
@@ -1296,13 +1840,23 @@ function ContactPage() {
           <div>
             <div className="cinfo" style={{ marginBottom: "1.5rem" }}>
               <div style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.2rem", fontWeight: 600, marginBottom: "1.5rem", color: C.goldLight }}>Contact Information</div>
-              {[{Icon:I.Mail,l:"Email",v:"info@goldleadershipafrica.org"},{Icon:I.MapPin,l:"Location",v:"Nigeria, West Africa"},{Icon:I.Globe,l:"Website",v:"goldleadershipafrica.org"}].map(c => (
+              {[
+                {Icon:I.Mail,   l:"Email",    v:"goldnationbuilders@gmail.com"},
+                {Icon:I.Phone,  l:"Phone",    v:"(+234) 913 908 6444"},
+                {Icon:I.MapPin, l:"Location", v:"Akure, Ondo State, Nigeria"},
+                {Icon:I.Globe,  l:"Website",  v:"goldleadershipafrica.org"},
+              ].map(c => (
                 <div className="citem" key={c.l}><div className="cico"><c.Icon /></div><div><div className="clbl">{c.l}</div><div className="cval">{c.v}</div></div></div>
               ))}
             </div>
             <div className="cinfo">
               <div style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.2rem", fontWeight: 600, marginBottom: "1rem", color: C.goldLight }}>Follow GOLD</div>
-              <div className="sbtn">{[I.Twitter,I.LinkedIn,I.Facebook,I.Youtube].map((Icon,i) => <div className="sbtn2" key={i}><Icon /></div>)}</div>
+              <p style={{ fontSize: ".8rem", color: "rgba(255,255,255,.45)", marginBottom: "1rem", lineHeight: 1.6 }}>Stay connected with our work, updates, programs, and opportunities across Nigeria and Africa.</p>
+              <div className="sbtn">
+                {[{Icon:I.LinkedIn,href:SOCIALS.linkedin,l:"LinkedIn"},{Icon:I.Youtube,href:SOCIALS.youtube,l:"YouTube"},{Icon:I.Instagram,href:SOCIALS.instagram,l:"Instagram"},{Icon:I.Spotify,href:SOCIALS.spotify,l:"Spotify"}].map(s => (
+                  <a key={s.l} href={s.href} target="_blank" rel="noopener noreferrer" className="sbtn2" title={s.l} style={{ textDecoration: "none" }}><s.Icon /></a>
+                ))}
+              </div>
             </div>
           </div>
           <div className="cform">
@@ -1327,20 +1881,20 @@ export default function App() {
 
   const Page = () => {
     switch (pg) {
-      case "home": return <HomePage set={go} />;
-      case "about": return <AboutPage />;
-      case "programs": return <ProgramsPage set={go} />;
-      case "circles": return <CirclesPage set={go} />;
+      case "home":          return <HomePage set={go} />;
+      case "about":         return <AboutPage />;
+      case "ecosystem":     return <EcosystemPage set={go} />;
+      case "circles":       return <CirclesPage set={go} />;
       case "golden-circle": return <GoldenCirclePage set={go} />;
       case "policy-circle": return <PolicyCirclePage set={go} />;
-      case "golden-apply": return <GoldenApplyPage set={go} />;
-      case "policy-apply": return <PolicyApplyPage set={go} />;
-      case "fli": return <FLIPage set={go} />;
-      case "podcast": return <PodcastPage />;
-      case "impact": return <ImpactPage />;
-      case "join": return <JoinPage />;
-      case "contact": return <ContactPage />;
-      default: return <HomePage set={go} />;
+      case "golden-apply":  return <GoldenApplyPage set={go} />;
+      case "policy-apply":  return <PolicyApplyPage set={go} />;
+      case "fli":           return <FLIPage set={go} />;
+      case "podcast":       return <PodcastPage />;
+      case "impact":        return <ImpactPage />;
+      case "join":          return <JoinPage />;
+      case "contact":       return <ContactPage />;
+      default:              return <HomePage set={go} />;
     }
   };
 
